@@ -1,0 +1,110 @@
+<section class="bg-gray-50 dark:bg-gray-900">
+    <div class="min-h-screen py-10 flex flex-col items-center justify-center px-6 mx-auto lg:py-20">
+      <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+        <img class="w-40 h-20 mr-2" src="../../../assets/images/image.png">
+      </a>
+      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            Crea una cuenta 
+          </h1>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-4 md:space-y-6">
+            <!-- Name Field -->
+            <div>
+              <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cual es tu nombre?</label>
+              <input formControlName="nombre" type="text" id="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+              placeholder="Tu nombre">
+              <div *ngIf="registerForm.get('nombre')?.touched && registerForm.get('nombre')?.errors" class="text-red-500 text-xs mt-1">
+                <div *ngIf="registerForm.get('nombre')?.errors?.['required']">Es Necesario tu nombre para continuar con el proceso</div>
+                <div *ngIf="registerForm.get('nombre')?.errors?.['minlength']">El nombre debe tener al menos 2 caracteres</div>
+              </div>
+            </div>
+  
+            <!-- Document Type Field -->
+            <div>
+              <label for="document_type" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selecciona el tipo de documento</label>
+              <select formControlName="document_type" id="document_type" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option *ngFor="let document of document_type" [value]="document.value">{{document.name}}</option>
+              </select>
+              <div *ngIf="registerForm.get('document_type')?.touched && registerForm.get('document_type')?.errors" class="text-red-500 text-xs mt-1">
+                <div *ngIf="registerForm.get('document_type')?.errors?.['required']">Por favor selecciona un tipo de documento</div>
+              </div>
+            </div>
+  
+            <!-- Identification Field -->
+            <div>
+              <label for="identificacion" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Identificación</label>
+              <input formControlName="identificacion" type="text" id="identificacion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+              placeholder="Tu ID">
+              <div *ngIf="registerForm.get('identificacion')?.touched && registerForm.get('identificacion')?.errors" class="text-red-500 text-xs mt-1">
+                <div *ngIf="registerForm.get('identificacion')?.errors?.['required']">Es necesaria la identificación para continuar</div>
+                <div *ngIf="registerForm.get('identificacion')?.errors?.['pattern']">La identificación debe ser numérica</div>
+              </div>
+            </div>
+  
+            <!-- Phone Field -->
+            <div>
+              <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Teléfono</label>
+              <input formControlName="telefono" type="text" id="telefono" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+              placeholder="Tu teléfono">
+              <div *ngIf="registerForm.get('telefono')?.touched && registerForm.get('telefono')?.errors" class="text-red-500 text-xs mt-1">
+                <div *ngIf="registerForm.get('telefono')?.errors?.['required']">Requerimos tu numero de telefono</div>
+                <div *ngIf="registerForm.get('telefono')?.errors?.['pattern']">Por favor ingresa un numero valido</div>
+              </div>
+            </div>
+  
+            <!-- Email Field -->
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo electrónico</label>
+              <input formControlName="email" type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+              placeholder="correo@correo.co">
+              <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors" class="text-red-500 text-xs mt-1">
+                <div *ngIf="registerForm.get('email')?.errors?.['required']">El correo electrónico es necesario</div>
+                <div *ngIf="registerForm.get('email')?.errors?.['email']">Por favor ingresa una dirección de correo electrónico válida</div>
+              </div>
+            </div>
+  
+            <!-- Password Field -->
+            <div>
+              <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+              <input formControlName="password" type="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors" class="text-red-500 text-xs mt-1">
+                <div *ngIf="registerForm.get('password')?.errors?.['required']">La contraseña es necesaria</div>
+                <div *ngIf="registerForm.get('password')?.errors?.['minlength']">La contraseña debe tener al menos 8 caracteres</div>
+              </div>
+            </div>
+  
+            <!-- Confirm Password Field -->
+            <div>
+              <label for="confirmPassword" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirmar contraseña</label>
+              <input formControlName="confirmPassword" type="password" id="confirmPassword" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <div *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.errors?.['mismatch']" class="text-red-500 text-xs mt-1">
+                Las contraseñas no coinciden
+              </div>
+            </div>
+  
+            <!-- Terms Checkbox -->
+            <div class="flex items-start">
+              <div class="flex items-center h-5">
+                <input formControlName="terms" id="terms" aria-describedby="terms" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800">
+              </div>
+              <div class="ml-3 text-sm">
+                <label for="terms" class="font-light text-gray-500 dark:text-gray-300">Acepto los <a class="font-medium text-primary-600 hover:underline dark:text-primary-500" href="#">Términos y Condiciones</a></label>
+                <div *ngIf="registerForm.get('terms')?.touched && registerForm.get('terms')?.errors" class="text-red-500 text-xs mt-1">
+                  Debes aceptar los términos y condiciones
+                </div>
+              </div>
+            </div>
+  
+            <!-- Submit Button -->
+            <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Crear una cuenta</button>
+            
+            <!-- Login Link -->
+            <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+              ¿Ya tienes una cuenta? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Inicia sesión aquí</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
