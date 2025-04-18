@@ -5,14 +5,19 @@
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Ciudad origen -->
       <div class="flex flex-col relative">
-        <label class="text-sm text-gray-600 mb-1">Ciudad origen</label>
+        <label class="text-sm text-gray-600 mb-1">Ciudad origen <span class="text-red-500">*</span></label>
         <input 
           [formControl]="originSearchControl"
           (focus)="handleOriginFocus()"
           (blur)="handleOriginBlur()"
           class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800 pr-8"
           placeholder="Buscar ciudad..."
+          required
         />
+        <span *ngIf="shipmentForm.get('ciudad_origen')?.invalid && shipmentForm.get('ciudad_origen')?.touched" 
+              class="text-red-500 text-xs mt-1">
+          Ciudad origen es requerida
+        </span>
         <span 
           class="absolute right-3 top-8 transform -translate-y-1/2 cursor-pointer"
           (click)="toggleOriginDropdown()"
@@ -42,10 +47,15 @@
   
       <!-- Dirección origen -->
       <div class="flex flex-col">
-        <label class="text-sm text-gray-600 mb-1">Dirección completa de origen</label>
+        <label class="text-sm text-gray-600 mb-1">Dirección completa de origen <span class="text-red-500">*</span></label>
         <input formControlName="direccion_origen" 
-               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600"
-               placeholder="Ej: Calle 123 #45-67, Barrio El Poblado">
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800"
+               placeholder="Ej: Calle 123 #45-67, Barrio El Poblado"
+               required>
+        <span *ngIf="shipmentForm.get('direccion_origen')?.invalid && shipmentForm.get('direccion_origen')?.touched" 
+              class="text-red-500 text-xs mt-1">
+          Dirección origen es requerida
+        </span>
       </div>
     </div>
   
@@ -53,14 +63,19 @@
     <div class="grid md:grid-cols-2 gap-6">
       <!-- Ciudad destino -->
       <div class="flex flex-col relative">
-        <label class="text-sm text-gray-600 mb-1">Ciudad destino</label>
+        <label class="text-sm text-gray-600 mb-1">Ciudad destino <span class="text-red-500">*</span></label>
         <input 
           [formControl]="destinationSearchControl"
           (focus)="handleDestinationFocus()"
           (blur)="handleDestinationBlur()"
-          class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600 pr-8"
+          class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800 pr-8"
           placeholder="Buscar ciudad..."
+          required
         />
+        <span *ngIf="shipmentForm.get('ciudad_destino')?.invalid && shipmentForm.get('ciudad_destino')?.touched" 
+              class="text-red-500 text-xs mt-1">
+          Ciudad destino es requerida
+        </span>
         <span 
           class="absolute right-3 top-8 transform -translate-y-1/2 cursor-pointer"
           (click)="toggleDestinationDropdown()"
@@ -90,48 +105,80 @@
   
       <!-- Dirección destino -->
       <div class="flex flex-col">
-        <label class="text-sm text-gray-600 mb-1">Dirección completa de destino</label>
+        <label class="text-sm text-gray-600 mb-1">Dirección completa de destino <span class="text-red-500">*</span></label>
         <input formControlName="direccion_destino" 
-               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600"
-               placeholder="Ej: Carrera 56 #12-34, Barrio La Candelaria">
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800"
+               placeholder="Ej: Carrera 56 #12-34, Barrio La Candelaria"
+               required>
+        <span *ngIf="shipmentForm.get('direccion_destino')?.invalid && shipmentForm.get('direccion_destino')?.touched" 
+              class="text-red-500 text-xs mt-1">
+          Dirección destino es requerida
+        </span>
       </div>
     </div>
   
- 
-  
     <!-- Paquetes -->
-    <h2 class="text-2xl font-bold text-gray-800">Paquetes</h2>
+    <h2 class="text-2xl font-bold text-gray-800">Paquetes <span class="text-red-500">*</span></h2>
   
     <div formArrayName="packages" class="space-y-6">
       <div *ngFor="let pkg of packages.controls; let i=index" [formGroupName]="i" class="border border-gray-200 p-4 rounded-md bg-gray-50">
         <div class="grid md:grid-cols-3 gap-4">
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Tipo</label>
-            <input formControlName="tipo" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
+            <label class="text-sm text-gray-600 mb-1">Tipo <span class="text-red-500">*</span></label>
+            <input formControlName="tipo" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800"
+                   required>
+            <span *ngIf="pkg.get('tipo')?.invalid && pkg.get('tipo')?.touched" class="text-red-500 text-xs mt-1">
+              Tipo es requerido
+            </span>
           </div>
           <div class="flex flex-col">
             <label class="text-sm text-gray-600 mb-1">Descripción</label>
-            <input formControlName="descripcion" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
+            <input formControlName="descripcion" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800">
           </div>
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Peso (kg)</label>
-            <input formControlName="peso" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
+            <label class="text-sm text-gray-600 mb-1">Peso (kg) <span class="text-red-500">*</span></label>
+            <input formControlName="peso" type="number" min="0.1" step="0.1" 
+                   class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800"
+                   required>
+            <span *ngIf="pkg.get('peso')?.invalid && pkg.get('peso')?.touched" class="text-red-500 text-xs mt-1">
+              Peso debe ser mayor a 0
+            </span>
           </div>
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Largo (cm)</label>
-            <input formControlName="largo" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
+            <label class="text-sm text-gray-600 mb-1">Largo (cm) <span class="text-red-500">*</span></label>
+            <input formControlName="largo" type="number" min="1" 
+                   class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800"
+                   required>
+            <span *ngIf="pkg.get('largo')?.invalid && pkg.get('largo')?.touched" class="text-red-500 text-xs mt-1">
+              Largo debe ser mayor a 0
+            </span>
           </div>
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Alto (cm)</label>
-            <input formControlName="alto" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
+            <label class="text-sm text-gray-600 mb-1">Alto (cm) <span class="text-red-500">*</span></label>
+            <input formControlName="alto" type="number" min="1" 
+                   class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800"
+                   required>
+            <span *ngIf="pkg.get('alto')?.invalid && pkg.get('alto')?.touched" class="text-red-500 text-xs mt-1">
+              Alto debe ser mayor a 0
+            </span>
           </div>
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Ancho (cm)</label>
-            <input formControlName="ancho" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
+            <label class="text-sm text-gray-600 mb-1">Ancho (cm) <span class="text-red-500">*</span></label>
+            <input formControlName="ancho" type="number" min="1" 
+                   class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800"
+                   required>
+            <span *ngIf="pkg.get('ancho')?.invalid && pkg.get('ancho')?.touched" class="text-red-500 text-xs mt-1">
+              Ancho debe ser mayor a 0
+            </span>
           </div>
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Unidades</label>
-            <input formControlName="unidades" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
+            <label class="text-sm text-gray-600 mb-1">Unidades <span class="text-red-500">*</span></label>
+            <input formControlName="unidades" type="number" min="1" 
+                   class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800"
+                   required>
+            <span *ngIf="pkg.get('unidades')?.invalid && pkg.get('unidades')?.touched" class="text-red-500 text-xs mt-1">
+              Debe haber al menos 1 unidad
+            </span>
           </div>
         </div>
         <div class="text-right mt-4">
@@ -139,24 +186,29 @@
         </div>
       </div>
     </div>
+
     <div class="flex justify-between mt-6">
-    <button type="button" (click)="addPackage()" class="text-blue-600 hover:underline text-sm">Agregar paquete</button>
-</div>
-       <!-- Costo -->
-        <div>
-        <div>
-       <button type="button" (click)="calculateCost()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition text-sm">
-        Calcular Costo
+      <button type="button" (click)="addPackage()" class="text-blue-600 hover:underline text-sm">Agregar paquete</button>
+    </div>
+
+    <!-- Costo -->
+    <div>
+      <div>
+        <button type="button" (click)="calculateCost()" [disabled]="shipmentForm.invalid" 
+                class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition text-sm disabled:bg-gray-300">
+          Calcular Costo
+        </button>
+      </div>
+      <div class="flex items-center">
+        <span class="text-gray-600 mr-2">Costo estimado:</span>
+        <span class="font-bold text-lg">{{ shipmentForm.get('costo')?.value || '0' | currency }}</span>
+      </div>
+    </div>
+  
+    <div class="flex justify-end mt-6">
+      <button type="submit" [disabled]="shipmentForm.invalid || !shipmentForm.get('costo')?.value" 
+              class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition disabled:bg-gray-400">
+        Enviar
       </button>
     </div>
-    <div class="flex items-center">
-      <span class="text-gray-600 mr-2">Costo estimado:</span>
-      <span class="font-bold text-lg">{{ shipmentForm.get('costo')?.value || '0' | currency }}</span>
-    </div>
-  </div>
-  
-    <div class="flex justify-between mt-6">
-     
-      <button type="submit" (click)="onSubmit()" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Enviar</button>
-    </div>
-  </form>
+</form>

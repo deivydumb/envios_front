@@ -3,8 +3,9 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ChangeDetectorRef } from '@angular/core';
 import cities from '../../../assets/data/cities.json';
+import { ShipmentService } from '../../core/services/shipment/shipment.service';
 
 @Component({
   selector: 'app-shipment',
@@ -28,14 +29,15 @@ export class ShipmentComponent implements OnInit {
   showOriginDropdown = false;
   showDestinationDropdown = false;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private readonly shipmentService: ShipmentService, private cd: ChangeDetectorRef) {
+
     this.shipmentForm = this.fb.group({
       ciudad_origen: ['', Validators.required],
-      direccion_origen: ['', Validators.required], // Nuevo campo unificado
+      direccion_origen: ['', [Validators.required, Validators.minLength(3)]],
       ciudad_destino: ['', Validators.required],
-      direccion_destino: ['', Validators.required],
-      costo: ['', Validators.required],
-      packages: this.fb.array([])
+      direccion_destino: ['', [Validators.required, Validators.minLength(3)]],
+      costo: [0],
+      packages: this.fb.array([], Validators.required)
     });
   }
 
@@ -43,38 +45,37 @@ export class ShipmentComponent implements OnInit {
     this.filteredOriginCities = [...this.cities];
     this.filteredDestinationCities = [...this.cities];
 
-    // Escuchar cambios en los controles de búsqueda
-
     this.originSearchControl.valueChanges.subscribe(() => this.filterOriginCities());
-/*     this.shipmentForm.valueChanges.subscribe(() => {
-      if (this.shipmentForm.valid && !this.calculating) {
-        this.calculateCost();
-      }
-    }); */
+  }
+  updateFormState() {
+    this.shipmentForm.updateValueAndValidity();
+    this.cd.detectChanges();
+    this.cd.markForCheck();
   }
 
   get packages(): FormArray {
     return this.shipmentForm.get('packages') as FormArray;
   }
 
-  addPackage(): void {
-    const pkg = this.fb.group({
-      tipo: [''],
+  addPackage() {
+    const packageGroup = this.fb.group({
+      tipo: ['', Validators.required],
       descripcion: [''],
-      peso: [0, Validators.required],
-      largo: [0, Validators.required],
-      alto: [0],
-      ancho: [0],
-      unidades: [1, Validators.required],
+      peso: [0, [Validators.required, Validators.min(0.1)]],
+      largo: [0, [Validators.required, Validators.min(1)]],
+      alto: [0, [Validators.required, Validators.min(1)]],
+      ancho: [0, [Validators.required, Validators.min(1)]],
+      unidades: [1, [Validators.required, Validators.min(1)]]
     });
-    this.packages.push(pkg);
+    
+    this.packages.push(packageGroup);
+    this.updateFormState();
   }
 
   removePackage(index: number): void {
-    this.packages.removeAt(index);
+    this.updateFormState();
   }
 
-  // Métodos para el autocomplete de origen
   filterOriginCities() {
     const searchText = this.originSearchControl.value?.toLowerCase() || '';
     this.filteredOriginCities = this.cities.filter(city => 
@@ -112,8 +113,6 @@ export class ShipmentComponent implements OnInit {
       }
     }, 200);
   }
-
-  // Métodos para el autocomplete de destino
   filterDestinationCities() {
     const searchText = this.destinationSearchControl.value?.toLowerCase() || '';
     this.filteredDestinationCities = this.cities.filter(city => 
@@ -153,14 +152,26 @@ export class ShipmentComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log("Formulario de envío", this.shipmentForm);
+    if (this.shipmentForm.invalid) {
+      this.shipmentForm.markAllAsTouched(); // Esto forzará que se muestren los errores
+      return;
+    }
     if (this.shipmentForm.valid) {
-      console.log('Formulario válido:', this.shipmentForm.value);
-      // Aquí iría la llamada HTTP para guardar el envío
+      this.shipmentService.createShipment(this.shipmentForm.value)/* .subscribe({
+        next: (response: any) => {
+          console.log("Envío creado con éxito", response);
+        },
+        error: (error: any) => {
+          console.error("Error al crear envío", error);
+        }
+      }); */
     } else {
       this.shipmentForm.markAllAsTouched();
     }
   }
   calculateCost() {
+    this.updateFormState();
     const originCity = this.shipmentForm.get('ciudad_origen')?.value;
     const destinationCity = this.shipmentForm.get('ciudad_destino')?.value;
     const packages = this.shipmentForm.get('packages') as FormArray;
@@ -171,44 +182,34 @@ export class ShipmentComponent implements OnInit {
     let totalUnits = 0;
   
     packages.controls.forEach(pkg => {
-      const units = pkg.get('unidades')?.value || 1; // Si no hay unidades, asumir 1
+      const units = pkg.get('unidades')?.value || 1;
       totalWeight += (pkg.get('peso')?.value || 0) * units;
       totalVolume += ((pkg.get('largo')?.value || 0) * 
                      (pkg.get('alto')?.value || 0) * 
                      (pkg.get('ancho')?.value || 0)) / 1000000 * units;
       totalUnits += units;
     });
-  
-    // 1. Misma ciudad
     if (originCity === destinationCity) {
       baseCost = 9500;
     } 
-    // 2. Paquete pequeño (hasta 10kg y volumen pequeño)
     else if (totalWeight <= 10 && totalVolume <= 0.09) {
       baseCost = 9500;
     }
-    // 3. Paquetes más grandes
     else {
       baseCost = 9500;
-      
-      // Por cada 10kg adicionales (redondeando hacia arriba)
       if (totalWeight > 10) {
         const additionalWeightBlocks = Math.ceil((totalWeight - 10) / 10);
         baseCost += additionalWeightBlocks * 10000;
       }
-      
-      // Por volumen grande
       if (totalVolume > 0.09) {
         baseCost += 5000;
       }
       
-      // Costo adicional por múltiples unidades
       if (totalUnits > 1) {
-        baseCost += (totalUnits - 1) * 2000; // 2000 adicionales por unidad extra
+        baseCost += (totalUnits - 1) * 2000;
       }
     }
   
-    // Actualizar el campo sin disparar eventos
     this.shipmentForm.get('costo')?.setValue(baseCost, {emitEvent: false});
     console.log('Costo calculado:', {
       base: baseCost,
@@ -216,5 +217,6 @@ export class ShipmentComponent implements OnInit {
       volume: totalVolume,
       units: totalUnits
     });
+    this.updateFormState();
   }
 }
