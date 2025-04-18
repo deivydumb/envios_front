@@ -70,17 +70,13 @@ onSubmit() {
   // 1) Intentamos obtener el usuario por email
   this.userService.getUserByEmail(userData.email).subscribe({
     next: user => {
-      // Si entra aquí, el usuario ya existe
       alert('El usuario ya está registrado');
       this.showLoading = false;
     },
     error: err => {
       if (err.status === 404) {
-        // 2) Si no existe (404), procedemos a crearlo
         this.userService.creationUser(userData).subscribe({
           next: (res: any) => {
-            console.log('User created', res);
-            // Mantenemos el loader 3s y luego navegamos
             setTimeout(() => {
               this.showLoading = false;
               this.router.navigate(['/login']);
@@ -92,7 +88,6 @@ onSubmit() {
           }
         });
       } else {
-        // Otros errores al buscar
         console.error('Error comprobando existencia de usuario', err);
         this.showLoading = false;
       }

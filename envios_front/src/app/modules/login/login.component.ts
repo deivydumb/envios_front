@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../core/auth/auth.service'; // Asegúrate que la ruta sea correcta
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AuthService } from '../../core/auth/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -10,13 +10,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './login.component.html',
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class LoginComponent {
-  loginForm: FormGroup;
-  submitted = false;
-  errorMessage = '';
+  loginForm!: FormGroup;
+  errorMessage: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -25,30 +25,32 @@ export class LoginComponent {
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', [Validators.required]]
     });
   }
 
-  get f() {
-    return this.loginForm.controls;
+  ngOnInit() {
+    // Verificar si ya hay un token válido
+    if (this.authService.checkTokenValidity()) {
+      // Si el token es válido, redirigir al home
+      this.router.navigate(['/home']);
+    }
   }
 
-  onSubmit() {
-    this.submitted = true;
-    this.errorMessage = '';
-
-    if (this.loginForm.invalid) return;
-
+  onSubmit(): void {
     const { email, password } = this.loginForm.value;
+    console.log("Formulario", email, password);
 
     this.authService.login(email, password).subscribe({
-      next: (response: { token: string }) => {
-      // Guardar token o info de usuario si aplica
-      localStorage.setItem('token', response.token);
-      this.router.navigate(['/dashboard']); // o a donde necesites
+      next: (response) => {
+        if (response.token) {
+          sessionStorage.setItem('token', response.token);
+          this.router.navigate(['/home']);
+        }
       },
-      error: (err: { error?: { message?: string } }) => {
-      this.errorMessage = err.error?.message || 'Error al iniciar sesión.';
+      error: (err) => {
+        console.error(err);
+        this.errorMessage = 'Credenciales inválidas';
       }
     });
   }
