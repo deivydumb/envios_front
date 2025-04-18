@@ -1,0 +1,42 @@
+<div class="flex flex-col min-h-screen">
+    <app-header></app-header>
+  
+    <main class="flex-1">
+        <div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center px-2">
+            <div class="text-center mb-8">
+              <img class="w-60 h-auto mb-6 mx-auto" src="../../../assets/images/image.png" alt="Logo de Coordinadora">
+              <h1 class="text-3xl font-bold text-gray-800 mb-2">Bienvenido {{ this.username }} </h1>
+              <h2 class="text-3xl font-bold text-gray-800 mb-2"> al sistema de gestión de Envios de Coordinadora </h2>
+              <p class="text-gray-600">Selecciona una opción para continuar</p>
+            </div>
+          
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+              <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+                <h2 class="text-xl font-semibold text-blue-700 mb-4">📦 Realiza un envío</h2>
+                <p class="text-gray-600 mb-4">Crea un nuevo envío y gestiona tus paquetes.</p>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Ir</button>
+              </div>
+          
+        
+              <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+                <h2 class="text-xl font-semibold text-green-700 mb-4">🔍 Consultar tus envíos</h2>
+                <p class="text-gray-600 mb-4">Revisa el estado de todos tus envíos anteriores.</p>
+                <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Consultar</button>
+              </div>
+          
+        
+              <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+                <h2 class="text-xl font-semibold text-purple-700 mb-4">📑 Historial</h2>
+                <p class="text-gray-600 mb-4">Visualiza el historial completo de tus operaciones.</p>
+                <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Ver historial</button>
+              </div>
+            </div>
+          </div>
+    </main>
+  
+    <app-footer></app-footer>
+  </div>
+  
+
+  
