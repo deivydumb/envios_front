@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { AuthService } from '../auth/auth.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,18 +7,25 @@ import { Observable } from 'rxjs';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private router: Router) {}
 
   canActivate(
-    next: ActivatedRouteSnapshot,
+    route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.authService.checkTokenValidity()) {
-      return true; // Si el token es válido, permite el acceso
+    // Verificar si el usuario está intentando acceder a una ruta que no sea login ni registro
+    if (state.url === '/login' || state.url === '/register') {
+      return true; // No protegemos estas rutas
     }
 
-    // Si el token no es válido, redirige al login
-    this.router.navigate(['/login']);
-    return false;
+    const token = sessionStorage.getItem('token');
+    if (token) {
+      // Si el token existe, se puede acceder a la ruta
+      return true;
+    } else {
+      // Si no hay token, redirigir al login
+      this.router.navigate(['/login']);
+      return false;
+    }
   }
 }

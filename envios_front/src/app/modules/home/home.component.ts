@@ -18,15 +18,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     const token = sessionStorage.getItem('token');
     if (token) {
-      // Decodificar el token JWT
       const payload = JSON.parse(atob(token.split('.')[1]));
 
       // Extraemos el nombre del usuario (puedes ajustarlo según tu payload)
       this.username = payload.username || 'Usuario desconocido'; // Ajusta 'username' según el nombre de la propiedad en tu token
       console.log(payload);
       this.userService.getUserByEmail(payload.email).subscribe(user => {
-        user.data
-        if (user) {
+        if (user && user.data) {
           this.username = user.data.nombre; // Ajusta 'name' según la propiedad que contenga el nombre del usuario
         } else {
           this.username = 'Usuario desconocido';
