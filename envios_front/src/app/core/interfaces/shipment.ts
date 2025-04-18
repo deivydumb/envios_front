@@ -1,5 +1,5 @@
 export enum ShipmentStatus {
-    PREPARACION = 'preparacion',
+    Espera = 'en espera',
     TRANSITO = 'transito',
     EN_REPARTO = 'en_reparto',
     ENTREGADO = 'entregado',
@@ -9,8 +9,8 @@ export enum ShipmentStatus {
 export interface IShipment {
     id?: number;
     codigo_seguimiento: string;
-    fecha_envio?: Date;
-    fecha_entrega_estimada: Date;
+    fecha_envio?: string;
+    fecha_entrega_estimada: string;
     estado: ShipmentStatus;
     costo: number;
     ciudad_origen: string;
@@ -18,9 +18,6 @@ export interface IShipment {
     ciudad_destino: string;
     direccion_destino: string;
     userId: number;
-    createdAt?: Date;
-    updatedAt?: Date;
-    deletedAt?: Date;
   }
 
 export interface ResponseShipment {

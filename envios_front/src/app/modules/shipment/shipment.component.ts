@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
 import cities from '../../../assets/data/cities.json';
 import { ShipmentService } from '../../core/services/shipment/shipment.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-shipment',
@@ -17,10 +19,7 @@ import { ShipmentService } from '../../core/services/shipment/shipment.service';
 export class ShipmentComponent implements OnInit {
   shipmentForm: FormGroup;
   cities: {value: string, text: string}[] = cities;
-
-  private calculating = false
-  private isCalculating = false;
-
+  showLoading: boolean = false;
   originSearchControl = new FormControl('');
   destinationSearchControl = new FormControl('');
 
@@ -29,7 +28,7 @@ export class ShipmentComponent implements OnInit {
   showOriginDropdown = false;
   showDestinationDropdown = false;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private readonly shipmentService: ShipmentService, private cd: ChangeDetectorRef) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private readonly shipmentService: ShipmentService, private cd: ChangeDetectorRef, private router: Router) {
 
     this.shipmentForm = this.fb.group({
       ciudad_origen: ['', Validators.required],
@@ -158,14 +157,16 @@ export class ShipmentComponent implements OnInit {
       return;
     }
     if (this.shipmentForm.valid) {
-      this.shipmentService.createShipment(this.shipmentForm.value)/* .subscribe({
+      this.shipmentService.createShipment(this.shipmentForm.value).subscribe({
         next: (response: any) => {
           console.log("Envío creado con éxito", response);
+          this.showLoading = false;
+          this.router.navigate(['/login']);
         },
         error: (error: any) => {
           console.error("Error al crear envío", error);
         }
-      }); */
+      });
     } else {
       this.shipmentForm.markAllAsTouched();
     }

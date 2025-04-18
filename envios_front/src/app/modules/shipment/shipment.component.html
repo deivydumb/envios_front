@@ -1,3 +1,15 @@
+<div *ngIf="showLoading" 
+class="fixed inset-0 z-50 flex items-center justify-center bg-white/30 dark:bg-[#1063ac]/30 backdrop-blur-sm">
+<div class="p-8 bg-white dark:bg-gray-800 rounded-lg shadow-xl">
+   <div role="status">
+   <span class="sr-only">Loading...</span>
+</div>
+<p class="mt-4 text-center text-gray-600 dark:text-gray-300">Procesando...</p>
+</div>
+</div>
+
+
+
 <form [formGroup]="shipmentForm" (ngSubmit)="onSubmit()" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md space-y-6">
     <h2 class="text-2xl font-bold text-gray-800">Datos del Envío</h2>
   
@@ -91,10 +103,10 @@
             *ngFor="let city of filteredDestinationCities"
             class="p-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
             (click)="selectDestinationCity(city)"
-            [class.bg-blue-50]="shipmentForm.get('ciudad_destino')?.value === city.value"
+            [class.bg-blue-50]="shipmentForm.get('ciudad_destino')?.value === city.text"
           >
             <span>{{city.text}}</span>
-            <span *ngIf="shipmentForm.get('ciudad_destino')?.value === city.value" class="text-blue-500">✓</span>
+            <span *ngIf="shipmentForm.get('ciudad_destino')?.value === city.text" class="text-blue-500">✓</span>
           </div>
           
           <div *ngIf="filteredDestinationCities.length === 0" class="p-2 text-sm text-gray-500">
