@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Form, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UserService } from '../../core/services/user/user.service';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-register',
@@ -10,8 +14,9 @@ import { Form, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  registerForm !: FormGroup;
 
+  @ViewChild('termsModal') termsModal!: ElementRef;
+  registerForm !: FormGroup;
   document_type = [
     { value: '', name: 'Selecciona el tipo de documento' },
     { value: 'C.C', name: 'Cedula de Ciudadania' },
@@ -19,10 +24,18 @@ export class RegisterComponent {
     { value: 'Pasaporte', name: 'Pasaporte' },
     { value: 'T.I', name: 'Tarjeta de Identidad' }
   ];
-constructor(private fb: FormBuilder) {
+  showLoading: boolean = false;
+constructor(private fb: FormBuilder,private router: Router ,private userService: UserService) {
   this.createForm();
 
 }
+
+ngOnInit(){
+  this.userService.getUserByEmail("tets@test.com").subscribe(users => {
+    console.log(users);
+  });
+}
+
 createForm(){
   this.registerForm = this.fb.group({
     nombre: ['', [Validators.required, Validators.minLength(2)]],
@@ -32,7 +45,7 @@ createForm(){
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
     confirmPassword: ['', [Validators.required]],
-    terms: [false, Validators.requiredTrue]
+    rol : ['user'],
   }, { validator: this.passwordMatchValidator });
 }
 passwordMatchValidator(form: FormGroup) {
@@ -43,13 +56,51 @@ passwordMatchValidator(form: FormGroup) {
 }
 
 onSubmit() {
-  if (this.registerForm.valid) {
-    console.log('Form Submitted!', this.registerForm.value);
-    // Here you would typically call a service to register the user
-  } else {
+  this.showLoading = true;
+
+  if (this.registerForm.invalid) {
     this.markFormGroupTouched(this.registerForm);
+    this.showLoading = false;
+    return;
   }
+
+  const userData = this.registerForm.value;
+  console.log('Form Submitted!', userData);
+
+  // 1) Intentamos obtener el usuario por email
+  this.userService.getUserByEmail(userData.email).subscribe({
+    next: user => {
+      // Si entra aquí, el usuario ya existe
+      alert('El usuario ya está registrado');
+      this.showLoading = false;
+    },
+    error: err => {
+      if (err.status === 404) {
+        // 2) Si no existe (404), procedemos a crearlo
+        this.userService.creationUser(userData).subscribe({
+          next: (res: any) => {
+            console.log('User created', res);
+            // Mantenemos el loader 3s y luego navegamos
+            setTimeout(() => {
+              this.showLoading = false;
+              this.router.navigate(['/login']);
+            }, 3000);
+          },
+          error: createErr => {
+            console.error('Error creando usuario', createErr);
+            this.showLoading = false;
+          }
+        });
+      } else {
+        // Otros errores al buscar
+        console.error('Error comprobando existencia de usuario', err);
+        this.showLoading = false;
+      }
+    }
+  });
 }
+
+  
 
 markFormGroupTouched(formGroup: FormGroup) {
   Object.values(formGroup.controls).forEach(control => {
