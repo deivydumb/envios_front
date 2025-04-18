@@ -17,7 +17,9 @@ export class ShipmentComponent implements OnInit {
   shipmentForm: FormGroup;
   cities: {value: string, text: string}[] = cities;
 
-  // Controles para los autocompletes
+  private calculating = false
+  private isCalculating = false;
+
   originSearchControl = new FormControl('');
   destinationSearchControl = new FormControl('');
 
@@ -28,15 +30,11 @@ export class ShipmentComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.shipmentForm = this.fb.group({
-      codigo_seguimiento: ['', Validators.required],
-      fecha_entrega_estimada: ['', Validators.required],
-      estado: ['preparacion', Validators.required],
-      costo: [0, Validators.required],
       ciudad_origen: ['', Validators.required],
-      direccion_origen: ['', Validators.required],
+      direccion_origen: ['', Validators.required], // Nuevo campo unificado
       ciudad_destino: ['', Validators.required],
       direccion_destino: ['', Validators.required],
-      userId: [null, Validators.required],
+      costo: ['', Validators.required],
       packages: this.fb.array([])
     });
   }
@@ -46,8 +44,13 @@ export class ShipmentComponent implements OnInit {
     this.filteredDestinationCities = [...this.cities];
 
     // Escuchar cambios en los controles de búsqueda
+
     this.originSearchControl.valueChanges.subscribe(() => this.filterOriginCities());
-    this.destinationSearchControl.valueChanges.subscribe(() => this.filterDestinationCities());
+/*     this.shipmentForm.valueChanges.subscribe(() => {
+      if (this.shipmentForm.valid && !this.calculating) {
+        this.calculateCost();
+      }
+    }); */
   }
 
   get packages(): FormArray {
@@ -156,5 +159,62 @@ export class ShipmentComponent implements OnInit {
     } else {
       this.shipmentForm.markAllAsTouched();
     }
+  }
+  calculateCost() {
+    const originCity = this.shipmentForm.get('ciudad_origen')?.value;
+    const destinationCity = this.shipmentForm.get('ciudad_destino')?.value;
+    const packages = this.shipmentForm.get('packages') as FormArray;
+    
+    let baseCost = 0;
+    let totalWeight = 0;
+    let totalVolume = 0;
+    let totalUnits = 0;
+  
+    packages.controls.forEach(pkg => {
+      const units = pkg.get('unidades')?.value || 1; // Si no hay unidades, asumir 1
+      totalWeight += (pkg.get('peso')?.value || 0) * units;
+      totalVolume += ((pkg.get('largo')?.value || 0) * 
+                     (pkg.get('alto')?.value || 0) * 
+                     (pkg.get('ancho')?.value || 0)) / 1000000 * units;
+      totalUnits += units;
+    });
+  
+    // 1. Misma ciudad
+    if (originCity === destinationCity) {
+      baseCost = 9500;
+    } 
+    // 2. Paquete pequeño (hasta 10kg y volumen pequeño)
+    else if (totalWeight <= 10 && totalVolume <= 0.09) {
+      baseCost = 9500;
+    }
+    // 3. Paquetes más grandes
+    else {
+      baseCost = 9500;
+      
+      // Por cada 10kg adicionales (redondeando hacia arriba)
+      if (totalWeight > 10) {
+        const additionalWeightBlocks = Math.ceil((totalWeight - 10) / 10);
+        baseCost += additionalWeightBlocks * 10000;
+      }
+      
+      // Por volumen grande
+      if (totalVolume > 0.09) {
+        baseCost += 5000;
+      }
+      
+      // Costo adicional por múltiples unidades
+      if (totalUnits > 1) {
+        baseCost += (totalUnits - 1) * 2000; // 2000 adicionales por unidad extra
+      }
+    }
+  
+    // Actualizar el campo sin disparar eventos
+    this.shipmentForm.get('costo')?.setValue(baseCost, {emitEvent: false});
+    console.log('Costo calculado:', {
+      base: baseCost,
+      weight: totalWeight,
+      volume: totalVolume,
+      units: totalUnits
+    });
   }
 }

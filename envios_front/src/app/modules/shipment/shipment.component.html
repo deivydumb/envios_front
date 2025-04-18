@@ -1,37 +1,9 @@
 <form [formGroup]="shipmentForm" (ngSubmit)="onSubmit()" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md space-y-6">
     <h2 class="text-2xl font-bold text-gray-800">Datos del Envío</h2>
   
+    <!-- Sección de Origen -->
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="flex flex-col">
-        <label for="codigo_seguimiento" class="text-sm text-gray-600 mb-1">Código de seguimiento</label>
-        <input formControlName="codigo_seguimiento" id="codigo_seguimiento" type="text"
-               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" placeholder="ABC123XYZ"/>
-      </div>
-  
-      <div class="flex flex-col">
-        <label for="fecha_entrega_estimada" class="text-sm text-gray-600 mb-1">Fecha estimada de entrega</label>
-        <input formControlName="fecha_entrega_estimada" id="fecha_entrega_estimada" type="datetime-local"
-               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
-      </div>
-  
-      <div class="flex flex-col">
-        <label for="estado" class="text-sm text-gray-600 mb-1">Estado</label>
-        <select formControlName="estado" id="estado"
-               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800">
-          <option value="preparacion">En preparación</option>
-          <option value="transito">En tránsito</option>
-          <option value="reparto">En reparto</option>
-          <option value="entregado">Entregado</option>
-        </select>
-      </div>
-  
-      <div class="flex flex-col">
-        <label for="costo" class="text-sm text-gray-600 mb-1">Costo</label>
-        <input formControlName="costo" id="costo" type="number"
-               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" placeholder="1500"/>
-      </div>
-  
-      <!-- Autocomplete para ciudad origen -->
+      <!-- Ciudad origen -->
       <div class="flex flex-col relative">
         <label class="text-sm text-gray-600 mb-1">Ciudad origen</label>
         <input 
@@ -68,19 +40,25 @@
         </div>
       </div>
   
+      <!-- Dirección origen -->
       <div class="flex flex-col">
-        <label for="direccion_origen" class="text-sm text-gray-600 mb-1">Dirección origen</label>
-        <input formControlName="direccion_origen" id="direccion_origen"
-               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+        <label class="text-sm text-gray-600 mb-1">Dirección completa de origen</label>
+        <input formControlName="direccion_origen" 
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600"
+               placeholder="Ej: Calle 123 #45-67, Barrio El Poblado">
       </div>
+    </div>
   
+    <!-- Sección de Destino -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Ciudad destino -->
       <div class="flex flex-col relative">
         <label class="text-sm text-gray-600 mb-1">Ciudad destino</label>
         <input 
           [formControl]="destinationSearchControl"
           (focus)="handleDestinationFocus()"
           (blur)="handleDestinationBlur()"
-          class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800 pr-8"
+          class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600 pr-8"
           placeholder="Buscar ciudad..."
         />
         <span 
@@ -110,19 +88,18 @@
         </div>
       </div>
   
+      <!-- Dirección destino -->
       <div class="flex flex-col">
-        <label for="direccion_destino" class="text-sm text-gray-600 mb-1">Dirección destino</label>
-        <input formControlName="direccion_destino" id="direccion_destino"
-               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
-      </div>
-  
-      <div class="flex flex-col">
-        <label for="userId" class="text-sm text-gray-600 mb-1">ID de usuario</label>
-        <input formControlName="userId" id="userId" type="number"
-               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+        <label class="text-sm text-gray-600 mb-1">Dirección completa de destino</label>
+        <input formControlName="direccion_destino" 
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600"
+               placeholder="Ej: Carrera 56 #12-34, Barrio La Candelaria">
       </div>
     </div>
   
+ 
+  
+    <!-- Paquetes -->
     <h2 class="text-2xl font-bold text-gray-800">Paquetes</h2>
   
     <div formArrayName="packages" class="space-y-6">
@@ -130,31 +107,31 @@
         <div class="grid md:grid-cols-3 gap-4">
           <div class="flex flex-col">
             <label class="text-sm text-gray-600 mb-1">Tipo</label>
-            <input formControlName="tipo" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+            <input formControlName="tipo" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
           </div>
           <div class="flex flex-col">
             <label class="text-sm text-gray-600 mb-1">Descripción</label>
-            <input formControlName="descripcion" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+            <input formControlName="descripcion" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
           </div>
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Peso</label>
-            <input formControlName="peso" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+            <label class="text-sm text-gray-600 mb-1">Peso (kg)</label>
+            <input formControlName="peso" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
           </div>
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Largo</label>
-            <input formControlName="largo" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+            <label class="text-sm text-gray-600 mb-1">Largo (cm)</label>
+            <input formControlName="largo" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
           </div>
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Alto</label>
-            <input formControlName="alto" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+            <label class="text-sm text-gray-600 mb-1">Alto (cm)</label>
+            <input formControlName="alto" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
           </div>
           <div class="flex flex-col">
-            <label class="text-sm text-gray-600 mb-1">Ancho</label>
-            <input formControlName="ancho" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+            <label class="text-sm text-gray-600 mb-1">Ancho (cm)</label>
+            <input formControlName="ancho" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
           </div>
           <div class="flex flex-col">
             <label class="text-sm text-gray-600 mb-1">Unidades</label>
-            <input formControlName="unidades" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+            <input formControlName="unidades" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-600" />
           </div>
         </div>
         <div class="text-right mt-4">
@@ -162,9 +139,24 @@
         </div>
       </div>
     </div>
+    <div class="flex justify-between mt-6">
+    <button type="button" (click)="addPackage()" class="text-blue-600 hover:underline text-sm">Agregar paquete</button>
+</div>
+       <!-- Costo -->
+        <div>
+        <div>
+       <button type="button" (click)="calculateCost()" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition text-sm">
+        Calcular Costo
+      </button>
+    </div>
+    <div class="flex items-center">
+      <span class="text-gray-600 mr-2">Costo estimado:</span>
+      <span class="font-bold text-lg">{{ shipmentForm.get('costo')?.value || '0' | currency }}</span>
+    </div>
+  </div>
   
     <div class="flex justify-between mt-6">
-      <button type="button" (click)="addPackage()" class="text-blue-600 hover:underline text-sm">Agregar paquete</button>
-      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Enviar</button>
+     
+      <button type="submit" (click)="onSubmit()" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Enviar</button>
     </div>
   </form>
