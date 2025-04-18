@@ -8,6 +8,7 @@ export const routes: Routes = [
         { path: 'login', component: LoginComponent  }, // Ensure RegistriComponent exists in the specified path
         { path: 'registro', component: RegisterComponent },
         {path : 'home', loadComponent: () => import('./modules/home/home.component').then(m => m.HomeComponent),canActivate: [AuthGuard]},
+        {path : 'envios', loadComponent: () => import('./modules/shipment/shipment.component').then(m => m.ShipmentComponent), canActivate: [AuthGuard]},
         { path: '', redirectTo: '/login', pathMatch: 'full' },
         { path: '**', redirectTo: 'login' }
       ];

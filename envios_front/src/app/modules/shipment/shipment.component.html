@@ -1,0 +1,170 @@
+<form [formGroup]="shipmentForm" (ngSubmit)="onSubmit()" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md space-y-6">
+    <h2 class="text-2xl font-bold text-gray-800">Datos del Envío</h2>
+  
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="flex flex-col">
+        <label for="codigo_seguimiento" class="text-sm text-gray-600 mb-1">Código de seguimiento</label>
+        <input formControlName="codigo_seguimiento" id="codigo_seguimiento" type="text"
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" placeholder="ABC123XYZ"/>
+      </div>
+  
+      <div class="flex flex-col">
+        <label for="fecha_entrega_estimada" class="text-sm text-gray-600 mb-1">Fecha estimada de entrega</label>
+        <input formControlName="fecha_entrega_estimada" id="fecha_entrega_estimada" type="datetime-local"
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+      </div>
+  
+      <div class="flex flex-col">
+        <label for="estado" class="text-sm text-gray-600 mb-1">Estado</label>
+        <select formControlName="estado" id="estado"
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800">
+          <option value="preparacion">En preparación</option>
+          <option value="transito">En tránsito</option>
+          <option value="reparto">En reparto</option>
+          <option value="entregado">Entregado</option>
+        </select>
+      </div>
+  
+      <div class="flex flex-col">
+        <label for="costo" class="text-sm text-gray-600 mb-1">Costo</label>
+        <input formControlName="costo" id="costo" type="number"
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" placeholder="1500"/>
+      </div>
+  
+      <!-- Autocomplete para ciudad origen -->
+      <div class="flex flex-col relative">
+        <label class="text-sm text-gray-600 mb-1">Ciudad origen</label>
+        <input 
+          [formControl]="originSearchControl"
+          (focus)="handleOriginFocus()"
+          (blur)="handleOriginBlur()"
+          class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800 pr-8"
+          placeholder="Buscar ciudad..."
+        />
+        <span 
+          class="absolute right-3 top-8 transform -translate-y-1/2 cursor-pointer"
+          (click)="toggleOriginDropdown()"
+        >
+          ▼
+        </span>
+        
+        <div 
+          class="absolute z-50 w-full mt-1 bg-white rounded-lg shadow-lg max-h-60 overflow-y-auto border top-full"
+          *ngIf="showOriginDropdown"
+        >
+          <div 
+            *ngFor="let city of filteredOriginCities"
+            class="p-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
+            (click)="selectOriginCity(city)"
+            [class.bg-blue-50]="shipmentForm.get('ciudad_origen')?.value === city.value"
+          >
+            <span>{{city.text}}</span>
+            <span *ngIf="shipmentForm.get('ciudad_origen')?.value === city.value" class="text-blue-500">✓</span>
+          </div>
+          
+          <div *ngIf="filteredOriginCities.length === 0" class="p-2 text-sm text-gray-500">
+            No se encontraron ciudades
+          </div>
+        </div>
+      </div>
+  
+      <div class="flex flex-col">
+        <label for="direccion_origen" class="text-sm text-gray-600 mb-1">Dirección origen</label>
+        <input formControlName="direccion_origen" id="direccion_origen"
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+      </div>
+  
+      <div class="flex flex-col relative">
+        <label class="text-sm text-gray-600 mb-1">Ciudad destino</label>
+        <input 
+          [formControl]="destinationSearchControl"
+          (focus)="handleDestinationFocus()"
+          (blur)="handleDestinationBlur()"
+          class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800 pr-8"
+          placeholder="Buscar ciudad..."
+        />
+        <span 
+          class="absolute right-3 top-8 transform -translate-y-1/2 cursor-pointer"
+          (click)="toggleDestinationDropdown()"
+        >
+          ▼
+        </span>
+        
+        <div 
+          class="absolute z-50 w-full mt-1 bg-white rounded-lg shadow-lg max-h-60 overflow-y-auto border top-full"
+          *ngIf="showDestinationDropdown"
+        >
+          <div 
+            *ngFor="let city of filteredDestinationCities"
+            class="p-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
+            (click)="selectDestinationCity(city)"
+            [class.bg-blue-50]="shipmentForm.get('ciudad_destino')?.value === city.value"
+          >
+            <span>{{city.text}}</span>
+            <span *ngIf="shipmentForm.get('ciudad_destino')?.value === city.value" class="text-blue-500">✓</span>
+          </div>
+          
+          <div *ngIf="filteredDestinationCities.length === 0" class="p-2 text-sm text-gray-500">
+            No se encontraron ciudades
+          </div>
+        </div>
+      </div>
+  
+      <div class="flex flex-col">
+        <label for="direccion_destino" class="text-sm text-gray-600 mb-1">Dirección destino</label>
+        <input formControlName="direccion_destino" id="direccion_destino"
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+      </div>
+  
+      <div class="flex flex-col">
+        <label for="userId" class="text-sm text-gray-600 mb-1">ID de usuario</label>
+        <input formControlName="userId" id="userId" type="number"
+               class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+      </div>
+    </div>
+  
+    <h2 class="text-2xl font-bold text-gray-800">Paquetes</h2>
+  
+    <div formArrayName="packages" class="space-y-6">
+      <div *ngFor="let pkg of packages.controls; let i=index" [formGroupName]="i" class="border border-gray-200 p-4 rounded-md bg-gray-50">
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="flex flex-col">
+            <label class="text-sm text-gray-600 mb-1">Tipo</label>
+            <input formControlName="tipo" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-sm text-gray-600 mb-1">Descripción</label>
+            <input formControlName="descripcion" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-sm text-gray-600 mb-1">Peso</label>
+            <input formControlName="peso" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-sm text-gray-600 mb-1">Largo</label>
+            <input formControlName="largo" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-sm text-gray-600 mb-1">Alto</label>
+            <input formControlName="alto" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-sm text-gray-600 mb-1">Ancho</label>
+            <input formControlName="ancho" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-sm text-gray-600 mb-1">Unidades</label>
+            <input formControlName="unidades" type="number" class="border-b-2 border-gray-300 focus:border-blue-500 outline-none py-2 px-1 text-gray-800" />
+          </div>
+        </div>
+        <div class="text-right mt-4">
+          <button type="button" (click)="removePackage(i)" class="text-red-600 hover:underline text-sm">Eliminar paquete</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flex justify-between mt-6">
+      <button type="button" (click)="addPackage()" class="text-blue-600 hover:underline text-sm">Agregar paquete</button>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Enviar</button>
+    </div>
+  </form>

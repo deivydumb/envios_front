@@ -1,0 +1,4482 @@
+[
+    {
+        "value": "0001",
+        "text": "Abejorral - Antioquia"
+    },
+    {
+        "value": "0002",
+        "text": "Abrego - N. De Santander"
+    },
+    {
+        "value": "0003",
+        "text": "Abriaqui - Antioquia"
+    },
+    {
+        "value": "0004",
+        "text": "Acacias - Meta"
+    },
+    {
+        "value": "0005",
+        "text": "Acandi - Choco"
+    },
+    {
+        "value": "0006",
+        "text": "Acevedo - Huila"
+    },
+    {
+        "value": "0007",
+        "text": "Achi - Bolivar"
+    },
+    {
+        "value": "0008",
+        "text": "Agrado - Huila"
+    },
+    {
+        "value": "0009",
+        "text": "Agua De Dios - Cundinamarca"
+    },
+    {
+        "value": "0010",
+        "text": "Aguachica - Cesar"
+    },
+    {
+        "value": "0011",
+        "text": "Aguada - Santander"
+    },
+    {
+        "value": "0012",
+        "text": "Aguadas - Caldas"
+    },
+    {
+        "value": "0013",
+        "text": "Aguazul - Casanare"
+    },
+    {
+        "value": "0014",
+        "text": "Agustin Codazzi - Cesar"
+    },
+    {
+        "value": "0015",
+        "text": "Aipe - Huila"
+    },
+    {
+        "value": "0016",
+        "text": "Alban - Cundinamarca"
+    },
+    {
+        "value": "0017",
+        "text": "Alban - Nariño"
+    },
+    {
+        "value": "0018",
+        "text": "Albania - Caqueta"
+    },
+    {
+        "value": "0019",
+        "text": "Albania - La Guajira"
+    },
+    {
+        "value": "0020",
+        "text": "Albania - Santander"
+    },
+    {
+        "value": "0021",
+        "text": "Alcala - Valle Del Cauca"
+    },
+    {
+        "value": "0022",
+        "text": "Aldana - Nariño"
+    },
+    {
+        "value": "0023",
+        "text": "Alejandria - Antioquia"
+    },
+    {
+        "value": "0024",
+        "text": "Algarrobo - Magdalena"
+    },
+    {
+        "value": "0025",
+        "text": "Algeciras - Huila"
+    },
+    {
+        "value": "0026",
+        "text": "Almaguer - Cauca"
+    },
+    {
+        "value": "0027",
+        "text": "Almeida - Boyaca"
+    },
+    {
+        "value": "0028",
+        "text": "Alpujarra - Tolima"
+    },
+    {
+        "value": "0029",
+        "text": "Altamira - Huila"
+    },
+    {
+        "value": "0030",
+        "text": "Alto Baudo - Choco"
+    },
+    {
+        "value": "0031",
+        "text": "Altos Del Rosario - Bolivar"
+    },
+    {
+        "value": "0032",
+        "text": "Alvarado - Tolima"
+    },
+    {
+        "value": "0033",
+        "text": "Amaga - Antioquia"
+    },
+    {
+        "value": "0034",
+        "text": "Amalfi - Antioquia"
+    },
+    {
+        "value": "0035",
+        "text": "Ambalema - Tolima"
+    },
+    {
+        "value": "0036",
+        "text": "Anapoima - Cundinamarca"
+    },
+    {
+        "value": "0037",
+        "text": "Ancuya - Nariño"
+    },
+    {
+        "value": "0038",
+        "text": "Andalucia - Valle Del Cauca"
+    },
+    {
+        "value": "0039",
+        "text": "Andes - Antioquia"
+    },
+    {
+        "value": "0040",
+        "text": "Angelopolis - Antioquia"
+    },
+    {
+        "value": "0041",
+        "text": "Angostura - Antioquia"
+    },
+    {
+        "value": "0042",
+        "text": "Anolaima - Cundinamarca"
+    },
+    {
+        "value": "0043",
+        "text": "Anori - Antioquia"
+    },
+    {
+        "value": "0044",
+        "text": "Anserma - Caldas"
+    },
+    {
+        "value": "0045",
+        "text": "Ansermanuevo - Valle Del Cauca"
+    },
+    {
+        "value": "0046",
+        "text": "Anza - Antioquia"
+    },
+    {
+        "value": "0047",
+        "text": "Anzoategui - Tolima"
+    },
+    {
+        "value": "0048",
+        "text": "Apartado - Antioquia"
+    },
+    {
+        "value": "0049",
+        "text": "Apia - Risaralda"
+    },
+    {
+        "value": "0050",
+        "text": "Apulo - Cundinamarca"
+    },
+    {
+        "value": "0051",
+        "text": "Aquitania - Boyaca"
+    },
+    {
+        "value": "0052",
+        "text": "Aracataca - Magdalena"
+    },
+    {
+        "value": "0053",
+        "text": "Aranzazu - Caldas"
+    },
+    {
+        "value": "0054",
+        "text": "Aratoca - Santander"
+    },
+    {
+        "value": "0055",
+        "text": "Arauca - Arauca"
+    },
+    {
+        "value": "0056",
+        "text": "Arauquita - Arauca"
+    },
+    {
+        "value": "0057",
+        "text": "Arbelaez - Cundinamarca"
+    },
+    {
+        "value": "0058",
+        "text": "Arboleda - Nariño"
+    },
+    {
+        "value": "0059",
+        "text": "Arboledas - N. De Santander"
+    },
+    {
+        "value": "0060",
+        "text": "Arboletes - Antioquia"
+    },
+    {
+        "value": "0061",
+        "text": "Arcabuco - Boyaca"
+    },
+    {
+        "value": "0062",
+        "text": "Arenal - Bolivar"
+    },
+    {
+        "value": "0063",
+        "text": "Argelia - Antioquia"
+    },
+    {
+        "value": "0064",
+        "text": "Argelia - Cauca"
+    },
+    {
+        "value": "0065",
+        "text": "Argelia - Valle Del Cauca"
+    },
+    {
+        "value": "0066",
+        "text": "Ariguani - Magdalena"
+    },
+    {
+        "value": "0067",
+        "text": "Arjona - Bolivar"
+    },
+    {
+        "value": "0068",
+        "text": "Armenia - Antioquia"
+    },
+    {
+        "value": "0069",
+        "text": "Armenia - Quindio"
+    },
+    {
+        "value": "0070",
+        "text": "Armero - Tolima"
+    },
+    {
+        "value": "0071",
+        "text": "Arroyohondo - Bolivar"
+    },
+    {
+        "value": "0072",
+        "text": "Astrea - Cesar"
+    },
+    {
+        "value": "0073",
+        "text": "Ataco - Tolima"
+    },
+    {
+        "value": "0074",
+        "text": "Atrato - Choco"
+    },
+    {
+        "value": "0075",
+        "text": "Ayapel - Cordoba"
+    },
+    {
+        "value": "0076",
+        "text": "Bagado - Choco"
+    },
+    {
+        "value": "0077",
+        "text": "Bahia Solano - Choco"
+    },
+    {
+        "value": "0078",
+        "text": "Bajo Baudo - Choco"
+    },
+    {
+        "value": "0079",
+        "text": "Balboa - Cauca"
+    },
+    {
+        "value": "0080",
+        "text": "Balboa - Risaralda"
+    },
+    {
+        "value": "0081",
+        "text": "Baranoa - Atlantico"
+    },
+    {
+        "value": "0082",
+        "text": "Baraya - Huila"
+    },
+    {
+        "value": "0083",
+        "text": "Barbacoas - Nariño"
+    },
+    {
+        "value": "0084",
+        "text": "Barbosa - Antioquia"
+    },
+    {
+        "value": "0085",
+        "text": "Barbosa - Santander"
+    },
+    {
+        "value": "0086",
+        "text": "Barichara - Santander"
+    },
+    {
+        "value": "0087",
+        "text": "Barranca De Upia - Meta"
+    },
+    {
+        "value": "0088",
+        "text": "Barrancabermeja - Santander"
+    },
+    {
+        "value": "0089",
+        "text": "Barrancas - La Guajira"
+    },
+    {
+        "value": "0090",
+        "text": "Barranco De Loba - Bolivar"
+    },
+    {
+        "value": "0091",
+        "text": "Barranco Minas - Guainia"
+    },
+    {
+        "value": "0092",
+        "text": "Barranquilla - Atlantico"
+    },
+    {
+        "value": "0093",
+        "text": "Becerril - Cesar"
+    },
+    {
+        "value": "0094",
+        "text": "Belalcazar - Caldas"
+    },
+    {
+        "value": "0095",
+        "text": "Belen - Boyaca"
+    },
+    {
+        "value": "0096",
+        "text": "Belen - Nariño"
+    },
+    {
+        "value": "0097",
+        "text": "Belen De Los Andaquies - Caqueta"
+    },
+    {
+        "value": "0098",
+        "text": "Belen De Umbria - Risaralda"
+    },
+    {
+        "value": "0099",
+        "text": "Bello - Antioquia"
+    },
+    {
+        "value": "0100",
+        "text": "Belmira - Antioquia"
+    },
+    {
+        "value": "0101",
+        "text": "Beltran - Cundinamarca"
+    },
+    {
+        "value": "0102",
+        "text": "Berbeo - Boyaca"
+    },
+    {
+        "value": "0103",
+        "text": "Betania - Antioquia"
+    },
+    {
+        "value": "0104",
+        "text": "Beteitiva - Boyaca"
+    },
+    {
+        "value": "0105",
+        "text": "Betulia - Antioquia"
+    },
+    {
+        "value": "0106",
+        "text": "Betulia - Santander"
+    },
+    {
+        "value": "0107",
+        "text": "Bituima - Cundinamarca"
+    },
+    {
+        "value": "0108",
+        "text": "Boavita - Boyaca"
+    },
+    {
+        "value": "0109",
+        "text": "Bochalema - N. De Santander"
+    },
+    {
+        "value": "0110",
+        "text": "Bogota, D.C. - Bogota"
+    },
+    {
+        "value": "0111",
+        "text": "Bojaca - Cundinamarca"
+    },
+    {
+        "value": "0112",
+        "text": "Bojaya - Choco"
+    },
+    {
+        "value": "0113",
+        "text": "Bolivar - Cauca"
+    },
+    {
+        "value": "0114",
+        "text": "Bolivar - Santander"
+    },
+    {
+        "value": "0115",
+        "text": "Bolivar - Valle Del Cauca"
+    },
+    {
+        "value": "0116",
+        "text": "Bosconia - Cesar"
+    },
+    {
+        "value": "0117",
+        "text": "Boyaca - Boyaca"
+    },
+    {
+        "value": "0118",
+        "text": "Briceño - Antioquia"
+    },
+    {
+        "value": "0119",
+        "text": "Briceño - Boyaca"
+    },
+    {
+        "value": "0120",
+        "text": "Bucaramanga - Santander"
+    },
+    {
+        "value": "0121",
+        "text": "Bucarasica - N. De Santander"
+    },
+    {
+        "value": "0122",
+        "text": "Buenaventura - Valle Del Cauca"
+    },
+    {
+        "value": "0123",
+        "text": "Buenavista - Boyaca"
+    },
+    {
+        "value": "0124",
+        "text": "Buenavista - Cordoba"
+    },
+    {
+        "value": "0125",
+        "text": "Buenavista - Quindio"
+    },
+    {
+        "value": "0126",
+        "text": "Buenavista - Sucre"
+    },
+    {
+        "value": "0127",
+        "text": "Buenos Aires - Cauca"
+    },
+    {
+        "value": "0128",
+        "text": "Buesaco - Nariño"
+    },
+    {
+        "value": "0129",
+        "text": "Bugalagrande - Valle Del Cauca"
+    },
+    {
+        "value": "0130",
+        "text": "Buritica - Antioquia"
+    },
+    {
+        "value": "0131",
+        "text": "Busbanza - Boyaca"
+    },
+    {
+        "value": "0132",
+        "text": "Cabrera - Cundinamarca"
+    },
+    {
+        "value": "0133",
+        "text": "Cabrera - Santander"
+    },
+    {
+        "value": "0134",
+        "text": "Cabuyaro - Meta"
+    },
+    {
+        "value": "0135",
+        "text": "Cacahual - Guainia"
+    },
+    {
+        "value": "0136",
+        "text": "Caceres - Antioquia"
+    },
+    {
+        "value": "0137",
+        "text": "Cachipay - Cundinamarca"
+    },
+    {
+        "value": "0138",
+        "text": "Cachira - N. De Santander"
+    },
+    {
+        "value": "0139",
+        "text": "Cacota - N. De Santander"
+    },
+    {
+        "value": "0140",
+        "text": "Caicedo - Antioquia"
+    },
+    {
+        "value": "0141",
+        "text": "Caicedonia - Valle Del Cauca"
+    },
+    {
+        "value": "0142",
+        "text": "Caimito - Sucre"
+    },
+    {
+        "value": "0143",
+        "text": "Cajamarca - Tolima"
+    },
+    {
+        "value": "0144",
+        "text": "Cajibio - Cauca"
+    },
+    {
+        "value": "0145",
+        "text": "Cajica - Cundinamarca"
+    },
+    {
+        "value": "0146",
+        "text": "Calamar - Bolivar"
+    },
+    {
+        "value": "0147",
+        "text": "Calamar - Guaviare"
+    },
+    {
+        "value": "0148",
+        "text": "Calarca - Quindio"
+    },
+    {
+        "value": "0149",
+        "text": "Caldas - Antioquia"
+    },
+    {
+        "value": "0150",
+        "text": "Caldas - Boyaca"
+    },
+    {
+        "value": "0151",
+        "text": "Caldono - Cauca"
+    },
+    {
+        "value": "0152",
+        "text": "Cali - Valle Del Cauca"
+    },
+    {
+        "value": "0153",
+        "text": "California - Santander"
+    },
+    {
+        "value": "0154",
+        "text": "Calima - Valle Del Cauca"
+    },
+    {
+        "value": "0155",
+        "text": "Caloto - Cauca"
+    },
+    {
+        "value": "0156",
+        "text": "Campamento - Antioquia"
+    },
+    {
+        "value": "0157",
+        "text": "Campo De La Cruz - Atlantico"
+    },
+    {
+        "value": "0158",
+        "text": "Campoalegre - Huila"
+    },
+    {
+        "value": "0159",
+        "text": "Campohermoso - Boyaca"
+    },
+    {
+        "value": "0160",
+        "text": "Canalete - Cordoba"
+    },
+    {
+        "value": "0161",
+        "text": "Candelaria - Atlantico"
+    },
+    {
+        "value": "0162",
+        "text": "Candelaria - Valle Del Cauca"
+    },
+    {
+        "value": "0163",
+        "text": "Cantagallo - Bolivar"
+    },
+    {
+        "value": "0164",
+        "text": "Cañasgordas - Antioquia"
+    },
+    {
+        "value": "0165",
+        "text": "Caparrapi - Cundinamarca"
+    },
+    {
+        "value": "0166",
+        "text": "Capitanejo - Santander"
+    },
+    {
+        "value": "0167",
+        "text": "Caqueza - Cundinamarca"
+    },
+    {
+        "value": "0168",
+        "text": "Caracoli - Antioquia"
+    },
+    {
+        "value": "0169",
+        "text": "Caramanta - Antioquia"
+    },
+    {
+        "value": "0170",
+        "text": "Carcasi - Santander"
+    },
+    {
+        "value": "0171",
+        "text": "Carepa - Antioquia"
+    },
+    {
+        "value": "0172",
+        "text": "Carmen De Apicala - Tolima"
+    },
+    {
+        "value": "0173",
+        "text": "Carmen De Carupa - Cundinamarca"
+    },
+    {
+        "value": "0174",
+        "text": "Carmen Del Darien - Choco"
+    },
+    {
+        "value": "0175",
+        "text": "Carolina - Antioquia"
+    },
+    {
+        "value": "0176",
+        "text": "Cartagena - Bolivar"
+    },
+    {
+        "value": "0177",
+        "text": "Cartagena Del Chaira - Caqueta"
+    },
+    {
+        "value": "0178",
+        "text": "Cartago - Valle Del Cauca"
+    },
+    {
+        "value": "0179",
+        "text": "Caruru - Vaupes"
+    },
+    {
+        "value": "0180",
+        "text": "Casabianca - Tolima"
+    },
+    {
+        "value": "0181",
+        "text": "Castilla La Nueva - Meta"
+    },
+    {
+        "value": "0182",
+        "text": "Caucasia - Antioquia"
+    },
+    {
+        "value": "0183",
+        "text": "Cepita - Santander"
+    },
+    {
+        "value": "0184",
+        "text": "Cerete - Cordoba"
+    },
+    {
+        "value": "0185",
+        "text": "Cerinza - Boyaca"
+    },
+    {
+        "value": "0186",
+        "text": "Cerrito - Santander"
+    },
+    {
+        "value": "0187",
+        "text": "Cerro San Antonio - Magdalena"
+    },
+    {
+        "value": "0188",
+        "text": "Certegui - Choco"
+    },
+    {
+        "value": "0189",
+        "text": "Chachagui - Nariño"
+    },
+    {
+        "value": "0190",
+        "text": "Chaguani - Cundinamarca"
+    },
+    {
+        "value": "0191",
+        "text": "Chalan - Sucre"
+    },
+    {
+        "value": "0192",
+        "text": "Chameza - Casanare"
+    },
+    {
+        "value": "0193",
+        "text": "Chaparral - Tolima"
+    },
+    {
+        "value": "0194",
+        "text": "Charala - Santander"
+    },
+    {
+        "value": "0195",
+        "text": "Charta - Santander"
+    },
+    {
+        "value": "0196",
+        "text": "Chia - Cundinamarca"
+    },
+    {
+        "value": "0197",
+        "text": "Chibolo - Magdalena"
+    },
+    {
+        "value": "0198",
+        "text": "Chigorodo - Antioquia"
+    },
+    {
+        "value": "0199",
+        "text": "Chima - Cordoba"
+    },
+    {
+        "value": "0200",
+        "text": "Chima - Santander"
+    },
+    {
+        "value": "0201",
+        "text": "Chimichagua - Cesar"
+    },
+    {
+        "value": "0202",
+        "text": "Chinacota - N. De Santander"
+    },
+    {
+        "value": "0203",
+        "text": "Chinavita - Boyaca"
+    },
+    {
+        "value": "0204",
+        "text": "Chinchina - Caldas"
+    },
+    {
+        "value": "0205",
+        "text": "Chinu - Cordoba"
+    },
+    {
+        "value": "0206",
+        "text": "Chipaque - Cundinamarca"
+    },
+    {
+        "value": "0207",
+        "text": "Chipata - Santander"
+    },
+    {
+        "value": "0208",
+        "text": "Chiquinquira - Boyaca"
+    },
+    {
+        "value": "0209",
+        "text": "Chiquiza - Boyaca"
+    },
+    {
+        "value": "0210",
+        "text": "Chiriguana - Cesar"
+    },
+    {
+        "value": "0211",
+        "text": "Chiscas - Boyaca"
+    },
+    {
+        "value": "0212",
+        "text": "Chita - Boyaca"
+    },
+    {
+        "value": "0213",
+        "text": "Chitaga - N. De Santander"
+    },
+    {
+        "value": "0214",
+        "text": "Chitaraque - Boyaca"
+    },
+    {
+        "value": "0215",
+        "text": "Chivata - Boyaca"
+    },
+    {
+        "value": "0216",
+        "text": "Chivor - Boyaca"
+    },
+    {
+        "value": "0217",
+        "text": "Choachi - Cundinamarca"
+    },
+    {
+        "value": "0218",
+        "text": "Choconta - Cundinamarca"
+    },
+    {
+        "value": "0219",
+        "text": "Cicuco - Bolivar"
+    },
+    {
+        "value": "0220",
+        "text": "Cienaga - Magdalena"
+    },
+    {
+        "value": "0221",
+        "text": "Cienaga De Oro - Cordoba"
+    },
+    {
+        "value": "0222",
+        "text": "Cienega - Boyaca"
+    },
+    {
+        "value": "0223",
+        "text": "Cimitarra - Santander"
+    },
+    {
+        "value": "0224",
+        "text": "Circasia - Quindio"
+    },
+    {
+        "value": "0225",
+        "text": "Cisneros - Antioquia"
+    },
+    {
+        "value": "0226",
+        "text": "Ciudad Bolivar - Antioquia"
+    },
+    {
+        "value": "0227",
+        "text": "Clemencia - Bolivar"
+    },
+    {
+        "value": "0228",
+        "text": "Cocorna - Antioquia"
+    },
+    {
+        "value": "0229",
+        "text": "Coello - Tolima"
+    },
+    {
+        "value": "0230",
+        "text": "Cogua - Cundinamarca"
+    },
+    {
+        "value": "0231",
+        "text": "Colombia - Huila"
+    },
+    {
+        "value": "0232",
+        "text": "Colon - Nariño"
+    },
+    {
+        "value": "0233",
+        "text": "Colon - Putumayo"
+    },
+    {
+        "value": "0234",
+        "text": "Coloso - Sucre"
+    },
+    {
+        "value": "0235",
+        "text": "Combita - Boyaca"
+    },
+    {
+        "value": "0236",
+        "text": "Concepcion - Antioquia"
+    },
+    {
+        "value": "0237",
+        "text": "Concepcion - Santander"
+    },
+    {
+        "value": "0238",
+        "text": "Concordia - Antioquia"
+    },
+    {
+        "value": "0239",
+        "text": "Concordia - Magdalena"
+    },
+    {
+        "value": "0240",
+        "text": "Condoto - Choco"
+    },
+    {
+        "value": "0241",
+        "text": "Confines - Santander"
+    },
+    {
+        "value": "0242",
+        "text": "Consaca - Nariño"
+    },
+    {
+        "value": "0243",
+        "text": "Contadero - Nariño"
+    },
+    {
+        "value": "0244",
+        "text": "Contratacion - Santander"
+    },
+    {
+        "value": "0245",
+        "text": "Convencion - N. De Santander"
+    },
+    {
+        "value": "0246",
+        "text": "Copacabana - Antioquia"
+    },
+    {
+        "value": "0247",
+        "text": "Coper - Boyaca"
+    },
+    {
+        "value": "0248",
+        "text": "Cordoba - Bolivar"
+    },
+    {
+        "value": "0249",
+        "text": "Cordoba - Nariño"
+    },
+    {
+        "value": "0250",
+        "text": "Cordoba - Quindio"
+    },
+    {
+        "value": "0251",
+        "text": "Corinto - Cauca"
+    },
+    {
+        "value": "0252",
+        "text": "Coromoro - Santander"
+    },
+    {
+        "value": "0253",
+        "text": "Corozal - Sucre"
+    },
+    {
+        "value": "0254",
+        "text": "Corrales - Boyaca"
+    },
+    {
+        "value": "0255",
+        "text": "Cota - Cundinamarca"
+    },
+    {
+        "value": "0256",
+        "text": "Cotorra - Cordoba"
+    },
+    {
+        "value": "0257",
+        "text": "Covarachia - Boyaca"
+    },
+    {
+        "value": "0258",
+        "text": "Coveñas - Sucre"
+    },
+    {
+        "value": "0259",
+        "text": "Coyaima - Tolima"
+    },
+    {
+        "value": "0260",
+        "text": "Cravo Norte - Arauca"
+    },
+    {
+        "value": "0261",
+        "text": "Cuaspud - Nariño"
+    },
+    {
+        "value": "0262",
+        "text": "Cubara - Boyaca"
+    },
+    {
+        "value": "0263",
+        "text": "Cubarral - Meta"
+    },
+    {
+        "value": "0264",
+        "text": "Cucaita - Boyaca"
+    },
+    {
+        "value": "0265",
+        "text": "Cucunuba - Cundinamarca"
+    },
+    {
+        "value": "0266",
+        "text": "Cucuta - N. De Santander"
+    },
+    {
+        "value": "0267",
+        "text": "Cucutilla - N. De Santander"
+    },
+    {
+        "value": "0268",
+        "text": "Cuitiva - Boyaca"
+    },
+    {
+        "value": "0269",
+        "text": "Cumaral - Meta"
+    },
+    {
+        "value": "0270",
+        "text": "Cumaribo - Vichada"
+    },
+    {
+        "value": "0271",
+        "text": "Cumbal - Nariño"
+    },
+    {
+        "value": "0272",
+        "text": "Cumbitara - Nariño"
+    },
+    {
+        "value": "0273",
+        "text": "Cunday - Tolima"
+    },
+    {
+        "value": "0274",
+        "text": "Curillo - Caqueta"
+    },
+    {
+        "value": "0275",
+        "text": "Curiti - Santander"
+    },
+    {
+        "value": "0276",
+        "text": "Curumani - Cesar"
+    },
+    {
+        "value": "0277",
+        "text": "Dabeiba - Antioquia"
+    },
+    {
+        "value": "0278",
+        "text": "Dagua - Valle Del Cauca"
+    },
+    {
+        "value": "0279",
+        "text": "Dibulla - La Guajira"
+    },
+    {
+        "value": "0280",
+        "text": "Distraccion - La Guajira"
+    },
+    {
+        "value": "0281",
+        "text": "Dolores - Tolima"
+    },
+    {
+        "value": "0282",
+        "text": "Don Matias - Antioquia"
+    },
+    {
+        "value": "0283",
+        "text": "Dosquebradas - Risaralda"
+    },
+    {
+        "value": "0284",
+        "text": "Duitama - Boyaca"
+    },
+    {
+        "value": "0285",
+        "text": "Durania - N. De Santander"
+    },
+    {
+        "value": "0286",
+        "text": "Ebejico - Antioquia"
+    },
+    {
+        "value": "0287",
+        "text": "El Aguila - Valle Del Cauca"
+    },
+    {
+        "value": "0288",
+        "text": "El Bagre - Antioquia"
+    },
+    {
+        "value": "0289",
+        "text": "El Banco - Magdalena"
+    },
+    {
+        "value": "0290",
+        "text": "El Cairo - Valle Del Cauca"
+    },
+    {
+        "value": "0291",
+        "text": "El Calvario - Meta"
+    },
+    {
+        "value": "0292",
+        "text": "El Canton Del San Pablo - Choco"
+    },
+    {
+        "value": "0293",
+        "text": "El Carmen - N. De Santander"
+    },
+    {
+        "value": "0294",
+        "text": "El Carmen De Atrato - Choco"
+    },
+    {
+        "value": "0295",
+        "text": "El Carmen De Bolivar - Bolivar"
+    },
+    {
+        "value": "0296",
+        "text": "El Carmen De Chucuri - Santander"
+    },
+    {
+        "value": "0297",
+        "text": "El Carmen De Viboral - Antioquia"
+    },
+    {
+        "value": "0298",
+        "text": "El Castillo - Meta"
+    },
+    {
+        "value": "0299",
+        "text": "El Cerrito - Valle Del Cauca"
+    },
+    {
+        "value": "0300",
+        "text": "El Charco - Nariño"
+    },
+    {
+        "value": "0301",
+        "text": "El Cocuy - Boyaca"
+    },
+    {
+        "value": "0302",
+        "text": "El Colegio - Cundinamarca"
+    },
+    {
+        "value": "0303",
+        "text": "El Copey - Cesar"
+    },
+    {
+        "value": "0304",
+        "text": "El Doncello - Caqueta"
+    },
+    {
+        "value": "0305",
+        "text": "El Dorado - Meta"
+    },
+    {
+        "value": "0306",
+        "text": "El Dovio - Valle Del Cauca"
+    },
+    {
+        "value": "0307",
+        "text": "El Encanto - Amazonas"
+    },
+    {
+        "value": "0308",
+        "text": "El Espino - Boyaca"
+    },
+    {
+        "value": "0309",
+        "text": "El Guacamayo - Santander"
+    },
+    {
+        "value": "0310",
+        "text": "El Guamo - Bolivar"
+    },
+    {
+        "value": "0311",
+        "text": "El Litoral Del San Juan - Choco"
+    },
+    {
+        "value": "0312",
+        "text": "El Molino - La Guajira"
+    },
+    {
+        "value": "0313",
+        "text": "El Paso - Cesar"
+    },
+    {
+        "value": "0314",
+        "text": "El Paujil - Caqueta"
+    },
+    {
+        "value": "0315",
+        "text": "El Peñol - Nariño"
+    },
+    {
+        "value": "0316",
+        "text": "El Peñon - Bolivar"
+    },
+    {
+        "value": "0317",
+        "text": "El Peñon - Cundinamarca"
+    },
+    {
+        "value": "0318",
+        "text": "El Peñon - Santander"
+    },
+    {
+        "value": "0319",
+        "text": "El Piñon - Magdalena"
+    },
+    {
+        "value": "0320",
+        "text": "El Playon - Santander"
+    },
+    {
+        "value": "0321",
+        "text": "El Reten - Magdalena"
+    },
+    {
+        "value": "0322",
+        "text": "El Retorno - Guaviare"
+    },
+    {
+        "value": "0323",
+        "text": "El Roble - Sucre"
+    },
+    {
+        "value": "0324",
+        "text": "El Rosal - Cundinamarca"
+    },
+    {
+        "value": "0325",
+        "text": "El Rosario - Nariño"
+    },
+    {
+        "value": "0326",
+        "text": "El Santuario - Antioquia"
+    },
+    {
+        "value": "0327",
+        "text": "El Tablon De Gomez - Nariño"
+    },
+    {
+        "value": "0328",
+        "text": "El Tambo - Cauca"
+    },
+    {
+        "value": "0329",
+        "text": "El Tambo - Nariño"
+    },
+    {
+        "value": "0330",
+        "text": "El Tarra - N. De Santander"
+    },
+    {
+        "value": "0331",
+        "text": "El Zulia - N. De Santander"
+    },
+    {
+        "value": "0332",
+        "text": "Elias - Huila"
+    },
+    {
+        "value": "0333",
+        "text": "Encino - Santander"
+    },
+    {
+        "value": "0334",
+        "text": "Enciso - Santander"
+    },
+    {
+        "value": "0335",
+        "text": "Entrerrios - Antioquia"
+    },
+    {
+        "value": "0336",
+        "text": "Envigado - Antioquia"
+    },
+    {
+        "value": "0337",
+        "text": "Espinal - Tolima"
+    },
+    {
+        "value": "0338",
+        "text": "Facatativa - Cundinamarca"
+    },
+    {
+        "value": "0339",
+        "text": "Falan - Tolima"
+    },
+    {
+        "value": "0340",
+        "text": "Filadelfia - Caldas"
+    },
+    {
+        "value": "0341",
+        "text": "Filandia - Quindio"
+    },
+    {
+        "value": "0342",
+        "text": "Firavitoba - Boyaca"
+    },
+    {
+        "value": "0343",
+        "text": "Flandes - Tolima"
+    },
+    {
+        "value": "0344",
+        "text": "Florencia - Caqueta"
+    },
+    {
+        "value": "0345",
+        "text": "Florencia - Cauca"
+    },
+    {
+        "value": "0346",
+        "text": "Floresta - Boyaca"
+    },
+    {
+        "value": "0347",
+        "text": "Florian - Santander"
+    },
+    {
+        "value": "0348",
+        "text": "Florida - Valle Del Cauca"
+    },
+    {
+        "value": "0349",
+        "text": "Floridablanca - Santander"
+    },
+    {
+        "value": "0350",
+        "text": "Fomeque - Cundinamarca"
+    },
+    {
+        "value": "0351",
+        "text": "Fonseca - La Guajira"
+    },
+    {
+        "value": "0352",
+        "text": "Fortul - Arauca"
+    },
+    {
+        "value": "0353",
+        "text": "Fosca - Cundinamarca"
+    },
+    {
+        "value": "0354",
+        "text": "Francisco Pizarro - Nariño"
+    },
+    {
+        "value": "0355",
+        "text": "Fredonia - Antioquia"
+    },
+    {
+        "value": "0356",
+        "text": "Fresno - Tolima"
+    },
+    {
+        "value": "0357",
+        "text": "Frontino - Antioquia"
+    },
+    {
+        "value": "0358",
+        "text": "Fuente De Oro - Meta"
+    },
+    {
+        "value": "0359",
+        "text": "Fundacion - Magdalena"
+    },
+    {
+        "value": "0360",
+        "text": "Funes - Nariño"
+    },
+    {
+        "value": "0361",
+        "text": "Funza - Cundinamarca"
+    },
+    {
+        "value": "0362",
+        "text": "Fuquene - Cundinamarca"
+    },
+    {
+        "value": "0363",
+        "text": "Fusagasuga - Cundinamarca"
+    },
+    {
+        "value": "0364",
+        "text": "Gachala - Cundinamarca"
+    },
+    {
+        "value": "0365",
+        "text": "Gachancipa - Cundinamarca"
+    },
+    {
+        "value": "0366",
+        "text": "Gachantiva - Boyaca"
+    },
+    {
+        "value": "0367",
+        "text": "Gacheta - Cundinamarca"
+    },
+    {
+        "value": "0368",
+        "text": "Galan - Santander"
+    },
+    {
+        "value": "0369",
+        "text": "Galapa - Atlantico"
+    },
+    {
+        "value": "0370",
+        "text": "Galeras - Sucre"
+    },
+    {
+        "value": "0371",
+        "text": "Gama - Cundinamarca"
+    },
+    {
+        "value": "0372",
+        "text": "Gamarra - Cesar"
+    },
+    {
+        "value": "0373",
+        "text": "Gambita - Santander"
+    },
+    {
+        "value": "0374",
+        "text": "Gameza - Boyaca"
+    },
+    {
+        "value": "0375",
+        "text": "Garagoa - Boyaca"
+    },
+    {
+        "value": "0376",
+        "text": "Garzon - Huila"
+    },
+    {
+        "value": "0377",
+        "text": "Genova - Quindio"
+    },
+    {
+        "value": "0378",
+        "text": "Gigante - Huila"
+    },
+    {
+        "value": "0379",
+        "text": "Ginebra - Valle Del Cauca"
+    },
+    {
+        "value": "0380",
+        "text": "Giraldo - Antioquia"
+    },
+    {
+        "value": "0381",
+        "text": "Girardot - Cundinamarca"
+    },
+    {
+        "value": "0382",
+        "text": "Girardota - Antioquia"
+    },
+    {
+        "value": "0383",
+        "text": "Giron - Santander"
+    },
+    {
+        "value": "0384",
+        "text": "Gomez Plata - Antioquia"
+    },
+    {
+        "value": "0385",
+        "text": "Gonzalez - Cesar"
+    },
+    {
+        "value": "0386",
+        "text": "Gramalote - N. De Santander"
+    },
+    {
+        "value": "0387",
+        "text": "Granada - Antioquia"
+    },
+    {
+        "value": "0388",
+        "text": "Granada - Cundinamarca"
+    },
+    {
+        "value": "0389",
+        "text": "Granada - Meta"
+    },
+    {
+        "value": "0390",
+        "text": "Guepsa - Santander"
+    },
+    {
+        "value": "0391",
+        "text": "Guican - Boyaca"
+    },
+    {
+        "value": "0392",
+        "text": "Guaca - Santander"
+    },
+    {
+        "value": "0393",
+        "text": "Guacamayas - Boyaca"
+    },
+    {
+        "value": "0394",
+        "text": "Guacari - Valle Del Cauca"
+    },
+    {
+        "value": "0395",
+        "text": "Guachene - Cauca"
+    },
+    {
+        "value": "0396",
+        "text": "Guacheta - Cundinamarca"
+    },
+    {
+        "value": "0397",
+        "text": "Guachucal - Nariño"
+    },
+    {
+        "value": "0398",
+        "text": "Guadalajara De Buga - Valle Del Cauca"
+    },
+    {
+        "value": "0399",
+        "text": "Guadalupe - Antioquia"
+    },
+    {
+        "value": "0400",
+        "text": "Guadalupe - Huila"
+    },
+    {
+        "value": "0401",
+        "text": "Guadalupe - Santander"
+    },
+    {
+        "value": "0402",
+        "text": "Guaduas - Cundinamarca"
+    },
+    {
+        "value": "0403",
+        "text": "Guaitarilla - Nariño"
+    },
+    {
+        "value": "0404",
+        "text": "Gualmatan - Nariño"
+    },
+    {
+        "value": "0405",
+        "text": "Guamal - Magdalena"
+    },
+    {
+        "value": "0406",
+        "text": "Guamal - Meta"
+    },
+    {
+        "value": "0407",
+        "text": "Guamo - Tolima"
+    },
+    {
+        "value": "0408",
+        "text": "Guapi - Cauca"
+    },
+    {
+        "value": "0409",
+        "text": "Guapota - Santander"
+    },
+    {
+        "value": "0410",
+        "text": "Guaranda - Sucre"
+    },
+    {
+        "value": "0411",
+        "text": "Guarne - Antioquia"
+    },
+    {
+        "value": "0412",
+        "text": "Guasca - Cundinamarca"
+    },
+    {
+        "value": "0413",
+        "text": "Guatape - Antioquia"
+    },
+    {
+        "value": "0414",
+        "text": "Guataqui - Cundinamarca"
+    },
+    {
+        "value": "0415",
+        "text": "Guatavita - Cundinamarca"
+    },
+    {
+        "value": "0416",
+        "text": "Guateque - Boyaca"
+    },
+    {
+        "value": "0417",
+        "text": "Guatica - Risaralda"
+    },
+    {
+        "value": "0418",
+        "text": "Guavata - Santander"
+    },
+    {
+        "value": "0419",
+        "text": "Guayabal De Siquima - Cundinamarca"
+    },
+    {
+        "value": "0420",
+        "text": "Guayabetal - Cundinamarca"
+    },
+    {
+        "value": "0421",
+        "text": "Guayata - Boyaca"
+    },
+    {
+        "value": "0422",
+        "text": "Gutierrez - Cundinamarca"
+    },
+    {
+        "value": "0423",
+        "text": "Hacari - N. De Santander"
+    },
+    {
+        "value": "0424",
+        "text": "Hatillo De Loba - Bolivar"
+    },
+    {
+        "value": "0425",
+        "text": "Hato - Santander"
+    },
+    {
+        "value": "0426",
+        "text": "Hato Corozal - Casanare"
+    },
+    {
+        "value": "0427",
+        "text": "Hatonuevo - La Guajira"
+    },
+    {
+        "value": "0428",
+        "text": "Heliconia - Antioquia"
+    },
+    {
+        "value": "0429",
+        "text": "Herran - N. De Santander"
+    },
+    {
+        "value": "0430",
+        "text": "Herveo - Tolima"
+    },
+    {
+        "value": "0431",
+        "text": "Hispania - Antioquia"
+    },
+    {
+        "value": "0432",
+        "text": "Hobo - Huila"
+    },
+    {
+        "value": "0433",
+        "text": "Honda - Tolima"
+    },
+    {
+        "value": "0434",
+        "text": "Ibague - Tolima"
+    },
+    {
+        "value": "0435",
+        "text": "Icononzo - Tolima"
+    },
+    {
+        "value": "0436",
+        "text": "Iles - Nariño"
+    },
+    {
+        "value": "0437",
+        "text": "Imues - Nariño"
+    },
+    {
+        "value": "0438",
+        "text": "Inirida - Guainia"
+    },
+    {
+        "value": "0439",
+        "text": "Inza - Cauca"
+    },
+    {
+        "value": "0440",
+        "text": "Ipiales - Nariño"
+    },
+    {
+        "value": "0441",
+        "text": "Iquira - Huila"
+    },
+    {
+        "value": "0442",
+        "text": "Isnos - Huila"
+    },
+    {
+        "value": "0443",
+        "text": "Istmina - Choco"
+    },
+    {
+        "value": "0444",
+        "text": "Itagüi - Antioquia"
+    },
+    {
+        "value": "0445",
+        "text": "Ituango - Antioquia"
+    },
+    {
+        "value": "0446",
+        "text": "Iza - Boyaca"
+    },
+    {
+        "value": "0447",
+        "text": "Jambalo - Cauca"
+    },
+    {
+        "value": "0448",
+        "text": "Jamundi - Valle Del Cauca"
+    },
+    {
+        "value": "0449",
+        "text": "Jardin - Antioquia"
+    },
+    {
+        "value": "0450",
+        "text": "Jenesano - Boyaca"
+    },
+    {
+        "value": "0451",
+        "text": "Jerico - Antioquia"
+    },
+    {
+        "value": "0452",
+        "text": "Jerico - Boyaca"
+    },
+    {
+        "value": "0453",
+        "text": "Jerusalen - Cundinamarca"
+    },
+    {
+        "value": "0454",
+        "text": "Jesus Maria - Santander"
+    },
+    {
+        "value": "0455",
+        "text": "Jordan - Santander"
+    },
+    {
+        "value": "0456",
+        "text": "Juan De Acosta - Atlantico"
+    },
+    {
+        "value": "0457",
+        "text": "Junin - Cundinamarca"
+    },
+    {
+        "value": "0458",
+        "text": "Jurado - Choco"
+    },
+    {
+        "value": "0459",
+        "text": "La Apartada - Cordoba"
+    },
+    {
+        "value": "0460",
+        "text": "La Argentina - Huila"
+    },
+    {
+        "value": "0461",
+        "text": "La Belleza - Santander"
+    },
+    {
+        "value": "0462",
+        "text": "La Calera - Cundinamarca"
+    },
+    {
+        "value": "0463",
+        "text": "La Capilla - Boyaca"
+    },
+    {
+        "value": "0464",
+        "text": "La Ceja - Antioquia"
+    },
+    {
+        "value": "0465",
+        "text": "La Celia - Risaralda"
+    },
+    {
+        "value": "0466",
+        "text": "La Chorrera - Amazonas"
+    },
+    {
+        "value": "0467",
+        "text": "La Cruz - Nariño"
+    },
+    {
+        "value": "0468",
+        "text": "La Cumbre - Valle Del Cauca"
+    },
+    {
+        "value": "0469",
+        "text": "La Dorada - Caldas"
+    },
+    {
+        "value": "0470",
+        "text": "La Esperanza - N. De Santander"
+    },
+    {
+        "value": "0471",
+        "text": "La Estrella - Antioquia"
+    },
+    {
+        "value": "0472",
+        "text": "La Florida - Nariño"
+    },
+    {
+        "value": "0473",
+        "text": "La Gloria - Cesar"
+    },
+    {
+        "value": "0474",
+        "text": "La Guadalupe - Guainia"
+    },
+    {
+        "value": "0475",
+        "text": "La Jagua De Ibirico - Cesar"
+    },
+    {
+        "value": "0476",
+        "text": "La Jagua Del Pilar - La Guajira"
+    },
+    {
+        "value": "0477",
+        "text": "La Llanada - Nariño"
+    },
+    {
+        "value": "0478",
+        "text": "La Macarena - Meta"
+    },
+    {
+        "value": "0479",
+        "text": "La Merced - Caldas"
+    },
+    {
+        "value": "0480",
+        "text": "La Mesa - Cundinamarca"
+    },
+    {
+        "value": "0481",
+        "text": "La Montañita - Caqueta"
+    },
+    {
+        "value": "0482",
+        "text": "La Palma - Cundinamarca"
+    },
+    {
+        "value": "0483",
+        "text": "La Paz - Cesar"
+    },
+    {
+        "value": "0484",
+        "text": "La Paz - Santander"
+    },
+    {
+        "value": "0485",
+        "text": "La Pedrera - Amazonas"
+    },
+    {
+        "value": "0486",
+        "text": "La Peña - Cundinamarca"
+    },
+    {
+        "value": "0487",
+        "text": "La Pintada - Antioquia"
+    },
+    {
+        "value": "0488",
+        "text": "La Plata - Huila"
+    },
+    {
+        "value": "0489",
+        "text": "La Playa - N. De Santander"
+    },
+    {
+        "value": "0490",
+        "text": "La Primavera - Vichada"
+    },
+    {
+        "value": "0491",
+        "text": "La Salina - Casanare"
+    },
+    {
+        "value": "0492",
+        "text": "La Sierra - Cauca"
+    },
+    {
+        "value": "0493",
+        "text": "La Tebaida - Quindio"
+    },
+    {
+        "value": "0494",
+        "text": "La Tola - Nariño"
+    },
+    {
+        "value": "0495",
+        "text": "La Union - Antioquia"
+    },
+    {
+        "value": "0496",
+        "text": "La Union - Nariño"
+    },
+    {
+        "value": "0497",
+        "text": "La Union - Sucre"
+    },
+    {
+        "value": "0498",
+        "text": "La Union - Valle Del Cauca"
+    },
+    {
+        "value": "0499",
+        "text": "La Uvita - Boyaca"
+    },
+    {
+        "value": "0500",
+        "text": "La Vega - Cauca"
+    },
+    {
+        "value": "0501",
+        "text": "La Vega - Cundinamarca"
+    },
+    {
+        "value": "0502",
+        "text": "La Victoria - Amazonas"
+    },
+    {
+        "value": "0503",
+        "text": "La Victoria - Boyaca"
+    },
+    {
+        "value": "0504",
+        "text": "La Victoria - Valle Del Cauca"
+    },
+    {
+        "value": "0505",
+        "text": "La Virginia - Risaralda"
+    },
+    {
+        "value": "0506",
+        "text": "Labateca - N. De Santander"
+    },
+    {
+        "value": "0507",
+        "text": "Labranzagrande - Boyaca"
+    },
+    {
+        "value": "0508",
+        "text": "Landazuri - Santander"
+    },
+    {
+        "value": "0509",
+        "text": "Lebrija - Santander"
+    },
+    {
+        "value": "0510",
+        "text": "Leguizamo - Putumayo"
+    },
+    {
+        "value": "0511",
+        "text": "Leiva - Nariño"
+    },
+    {
+        "value": "0512",
+        "text": "Lejanias - Meta"
+    },
+    {
+        "value": "0513",
+        "text": "Lenguazaque - Cundinamarca"
+    },
+    {
+        "value": "0514",
+        "text": "Lerida - Tolima"
+    },
+    {
+        "value": "0515",
+        "text": "Leticia - Amazonas"
+    },
+    {
+        "value": "0516",
+        "text": "Libano - Tolima"
+    },
+    {
+        "value": "0517",
+        "text": "Liborina - Antioquia"
+    },
+    {
+        "value": "0518",
+        "text": "Linares - Nariño"
+    },
+    {
+        "value": "0519",
+        "text": "Lloro - Choco"
+    },
+    {
+        "value": "0520",
+        "text": "Lopez - Cauca"
+    },
+    {
+        "value": "0521",
+        "text": "Lorica - Cordoba"
+    },
+    {
+        "value": "0522",
+        "text": "Los Andes - Nariño"
+    },
+    {
+        "value": "0523",
+        "text": "Los Cordobas - Cordoba"
+    },
+    {
+        "value": "0524",
+        "text": "Los Palmitos - Sucre"
+    },
+    {
+        "value": "0525",
+        "text": "Los Patios - N. De Santander"
+    },
+    {
+        "value": "0526",
+        "text": "Los Santos - Santander"
+    },
+    {
+        "value": "0527",
+        "text": "Lourdes - N. De Santander"
+    },
+    {
+        "value": "0528",
+        "text": "Luruaco - Atlantico"
+    },
+    {
+        "value": "0529",
+        "text": "Macanal - Boyaca"
+    },
+    {
+        "value": "0530",
+        "text": "Macaravita - Santander"
+    },
+    {
+        "value": "0531",
+        "text": "Maceo - Antioquia"
+    },
+    {
+        "value": "0532",
+        "text": "Macheta - Cundinamarca"
+    },
+    {
+        "value": "0533",
+        "text": "Madrid - Cundinamarca"
+    },
+    {
+        "value": "0534",
+        "text": "Magangue - Bolivar"
+    },
+    {
+        "value": "0535",
+        "text": "Magui - Nariño"
+    },
+    {
+        "value": "0536",
+        "text": "Mahates - Bolivar"
+    },
+    {
+        "value": "0537",
+        "text": "Maicao - La Guajira"
+    },
+    {
+        "value": "0538",
+        "text": "Majagual - Sucre"
+    },
+    {
+        "value": "0539",
+        "text": "Malaga - Santander"
+    },
+    {
+        "value": "0540",
+        "text": "Malambo - Atlantico"
+    },
+    {
+        "value": "0541",
+        "text": "Mallama - Nariño"
+    },
+    {
+        "value": "0542",
+        "text": "Manati - Atlantico"
+    },
+    {
+        "value": "0543",
+        "text": "Manaure - Cesar"
+    },
+    {
+        "value": "0544",
+        "text": "Manaure - La Guajira"
+    },
+    {
+        "value": "0545",
+        "text": "Mani - Casanare"
+    },
+    {
+        "value": "0546",
+        "text": "Manizales - Caldas"
+    },
+    {
+        "value": "0547",
+        "text": "Manta - Cundinamarca"
+    },
+    {
+        "value": "0548",
+        "text": "Manzanares - Caldas"
+    },
+    {
+        "value": "0549",
+        "text": "Mapiripan - Meta"
+    },
+    {
+        "value": "0550",
+        "text": "Mapiripana - Guainia"
+    },
+    {
+        "value": "0551",
+        "text": "Margarita - Bolivar"
+    },
+    {
+        "value": "0552",
+        "text": "Maria La Baja - Bolivar"
+    },
+    {
+        "value": "0553",
+        "text": "Marinilla - Antioquia"
+    },
+    {
+        "value": "0554",
+        "text": "Maripi - Boyaca"
+    },
+    {
+        "value": "0555",
+        "text": "Mariquita - Tolima"
+    },
+    {
+        "value": "0556",
+        "text": "Marmato - Caldas"
+    },
+    {
+        "value": "0557",
+        "text": "Marquetalia - Caldas"
+    },
+    {
+        "value": "0558",
+        "text": "Marsella - Risaralda"
+    },
+    {
+        "value": "0559",
+        "text": "Marulanda - Caldas"
+    },
+    {
+        "value": "0560",
+        "text": "Matanza - Santander"
+    },
+    {
+        "value": "0561",
+        "text": "Medellin - Antioquia"
+    },
+    {
+        "value": "0562",
+        "text": "Medina - Cundinamarca"
+    },
+    {
+        "value": "0563",
+        "text": "Medio Atrato - Choco"
+    },
+    {
+        "value": "0564",
+        "text": "Medio Baudo - Choco"
+    },
+    {
+        "value": "0565",
+        "text": "Medio San Juan - Choco"
+    },
+    {
+        "value": "0566",
+        "text": "Melgar - Tolima"
+    },
+    {
+        "value": "0567",
+        "text": "Mercaderes - Cauca"
+    },
+    {
+        "value": "0568",
+        "text": "Mesetas - Meta"
+    },
+    {
+        "value": "0569",
+        "text": "Milan - Caqueta"
+    },
+    {
+        "value": "0570",
+        "text": "Miraflores - Boyaca"
+    },
+    {
+        "value": "0571",
+        "text": "Miraflores - Guaviare"
+    },
+    {
+        "value": "0572",
+        "text": "Miranda - Cauca"
+    },
+    {
+        "value": "0573",
+        "text": "Miriti - Parana - Amazonas"
+    },
+    {
+        "value": "0574",
+        "text": "Mistrato - Risaralda"
+    },
+    {
+        "value": "0575",
+        "text": "Mitu - Vaupes"
+    },
+    {
+        "value": "0576",
+        "text": "Mocoa - Putumayo"
+    },
+    {
+        "value": "0577",
+        "text": "Mogotes - Santander"
+    },
+    {
+        "value": "0578",
+        "text": "Molagavita - Santander"
+    },
+    {
+        "value": "0579",
+        "text": "Momil - Cordoba"
+    },
+    {
+        "value": "0580",
+        "text": "Mompos - Bolivar"
+    },
+    {
+        "value": "0581",
+        "text": "Mongua - Boyaca"
+    },
+    {
+        "value": "0582",
+        "text": "Mongui - Boyaca"
+    },
+    {
+        "value": "0583",
+        "text": "Moniquira - Boyaca"
+    },
+    {
+        "value": "0584",
+        "text": "Montebello - Antioquia"
+    },
+    {
+        "value": "0585",
+        "text": "Montecristo - Bolivar"
+    },
+    {
+        "value": "0586",
+        "text": "Montelibano - Cordoba"
+    },
+    {
+        "value": "0587",
+        "text": "Montenegro - Quindio"
+    },
+    {
+        "value": "0588",
+        "text": "Monteria - Cordoba"
+    },
+    {
+        "value": "0589",
+        "text": "Monterrey - Casanare"
+    },
+    {
+        "value": "0590",
+        "text": "Moñitos - Cordoba"
+    },
+    {
+        "value": "0591",
+        "text": "Morales - Bolivar"
+    },
+    {
+        "value": "0592",
+        "text": "Morales - Cauca"
+    },
+    {
+        "value": "0593",
+        "text": "Morelia - Caqueta"
+    },
+    {
+        "value": "0594",
+        "text": "Morichal - Guainia"
+    },
+    {
+        "value": "0595",
+        "text": "Morroa - Sucre"
+    },
+    {
+        "value": "0596",
+        "text": "Mosquera - Cundinamarca"
+    },
+    {
+        "value": "0597",
+        "text": "Mosquera - Nariño"
+    },
+    {
+        "value": "0598",
+        "text": "Motavita - Boyaca"
+    },
+    {
+        "value": "0599",
+        "text": "Murillo - Tolima"
+    },
+    {
+        "value": "0600",
+        "text": "Murindo - Antioquia"
+    },
+    {
+        "value": "0601",
+        "text": "Mutata - Antioquia"
+    },
+    {
+        "value": "0602",
+        "text": "Mutiscua - N. De Santander"
+    },
+    {
+        "value": "0603",
+        "text": "Muzo - Boyaca"
+    },
+    {
+        "value": "0604",
+        "text": "Nariño - Antioquia"
+    },
+    {
+        "value": "0605",
+        "text": "Nariño - Cundinamarca"
+    },
+    {
+        "value": "0606",
+        "text": "Nariño - Nariño"
+    },
+    {
+        "value": "0607",
+        "text": "Nataga - Huila"
+    },
+    {
+        "value": "0608",
+        "text": "Natagaima - Tolima"
+    },
+    {
+        "value": "0609",
+        "text": "Nechi - Antioquia"
+    },
+    {
+        "value": "0610",
+        "text": "Necocli - Antioquia"
+    },
+    {
+        "value": "0611",
+        "text": "Neira - Caldas"
+    },
+    {
+        "value": "0612",
+        "text": "Neiva - Huila"
+    },
+    {
+        "value": "0613",
+        "text": "Nemocon - Cundinamarca"
+    },
+    {
+        "value": "0614",
+        "text": "Nilo - Cundinamarca"
+    },
+    {
+        "value": "0615",
+        "text": "Nimaima - Cundinamarca"
+    },
+    {
+        "value": "0616",
+        "text": "Nobsa - Boyaca"
+    },
+    {
+        "value": "0617",
+        "text": "Nocaima - Cundinamarca"
+    },
+    {
+        "value": "0618",
+        "text": "Norcasia - Caldas"
+    },
+    {
+        "value": "0619",
+        "text": "Norosi - Bolivar"
+    },
+    {
+        "value": "0620",
+        "text": "Novita - Choco"
+    },
+    {
+        "value": "0621",
+        "text": "Nueva Granada - Magdalena"
+    },
+    {
+        "value": "0622",
+        "text": "Nuevo Colon - Boyaca"
+    },
+    {
+        "value": "0623",
+        "text": "Nunchia - Casanare"
+    },
+    {
+        "value": "0624",
+        "text": "Nuqui - Choco"
+    },
+    {
+        "value": "0625",
+        "text": "Obando - Valle Del Cauca"
+    },
+    {
+        "value": "0626",
+        "text": "Ocamonte - Santander"
+    },
+    {
+        "value": "0627",
+        "text": "Ocaña - N. De Santander"
+    },
+    {
+        "value": "0628",
+        "text": "Oiba - Santander"
+    },
+    {
+        "value": "0629",
+        "text": "Oicata - Boyaca"
+    },
+    {
+        "value": "0630",
+        "text": "Olaya - Antioquia"
+    },
+    {
+        "value": "0631",
+        "text": "Olaya Herrera - Nariño"
+    },
+    {
+        "value": "0632",
+        "text": "Onzaga - Santander"
+    },
+    {
+        "value": "0633",
+        "text": "Oporapa - Huila"
+    },
+    {
+        "value": "0634",
+        "text": "Orito - Putumayo"
+    },
+    {
+        "value": "0635",
+        "text": "Orocue - Casanare"
+    },
+    {
+        "value": "0636",
+        "text": "Ortega - Tolima"
+    },
+    {
+        "value": "0637",
+        "text": "Ospina - Nariño"
+    },
+    {
+        "value": "0638",
+        "text": "Otanche - Boyaca"
+    },
+    {
+        "value": "0639",
+        "text": "Ovejas - Sucre"
+    },
+    {
+        "value": "0640",
+        "text": "Pachavita - Boyaca"
+    },
+    {
+        "value": "0641",
+        "text": "Pacho - Cundinamarca"
+    },
+    {
+        "value": "0642",
+        "text": "Pacoa - Vaupes"
+    },
+    {
+        "value": "0643",
+        "text": "Pacora - Caldas"
+    },
+    {
+        "value": "0644",
+        "text": "Padilla - Cauca"
+    },
+    {
+        "value": "0645",
+        "text": "Paez - Boyaca"
+    },
+    {
+        "value": "0646",
+        "text": "Paez - Cauca"
+    },
+    {
+        "value": "0647",
+        "text": "Paicol - Huila"
+    },
+    {
+        "value": "0648",
+        "text": "Pailitas - Cesar"
+    },
+    {
+        "value": "0649",
+        "text": "Paime - Cundinamarca"
+    },
+    {
+        "value": "0650",
+        "text": "Paipa - Boyaca"
+    },
+    {
+        "value": "0651",
+        "text": "Pajarito - Boyaca"
+    },
+    {
+        "value": "0652",
+        "text": "Palermo - Huila"
+    },
+    {
+        "value": "0653",
+        "text": "Palestina - Caldas"
+    },
+    {
+        "value": "0654",
+        "text": "Palestina - Huila"
+    },
+    {
+        "value": "0655",
+        "text": "Palmar - Santander"
+    },
+    {
+        "value": "0656",
+        "text": "Palmar De Varela - Atlantico"
+    },
+    {
+        "value": "0657",
+        "text": "Palmas Del Socorro - Santander"
+    },
+    {
+        "value": "0658",
+        "text": "Palmira - Valle Del Cauca"
+    },
+    {
+        "value": "0659",
+        "text": "Palmito - Sucre"
+    },
+    {
+        "value": "0660",
+        "text": "Palocabildo - Tolima"
+    },
+    {
+        "value": "0661",
+        "text": "Pamplona - N. De Santander"
+    },
+    {
+        "value": "0662",
+        "text": "Pamplonita - N. De Santander"
+    },
+    {
+        "value": "0663",
+        "text": "Pana Pana - Guainia"
+    },
+    {
+        "value": "0664",
+        "text": "Pandi - Cundinamarca"
+    },
+    {
+        "value": "0665",
+        "text": "Panqueba - Boyaca"
+    },
+    {
+        "value": "0666",
+        "text": "Papunaua - Vaupes"
+    },
+    {
+        "value": "0667",
+        "text": "Paramo - Santander"
+    },
+    {
+        "value": "0668",
+        "text": "Paratebueno - Cundinamarca"
+    },
+    {
+        "value": "0669",
+        "text": "Pasca - Cundinamarca"
+    },
+    {
+        "value": "0670",
+        "text": "Pasto - Nariño"
+    },
+    {
+        "value": "0671",
+        "text": "Patia - Cauca"
+    },
+    {
+        "value": "0672",
+        "text": "Pauna - Boyaca"
+    },
+    {
+        "value": "0673",
+        "text": "Paya - Boyaca"
+    },
+    {
+        "value": "0674",
+        "text": "Paz De Ariporo - Casanare"
+    },
+    {
+        "value": "0675",
+        "text": "Paz De Rio - Boyaca"
+    },
+    {
+        "value": "0676",
+        "text": "Peñol - Antioquia"
+    },
+    {
+        "value": "0677",
+        "text": "Pedraza - Magdalena"
+    },
+    {
+        "value": "0678",
+        "text": "Pelaya - Cesar"
+    },
+    {
+        "value": "0679",
+        "text": "Pensilvania - Caldas"
+    },
+    {
+        "value": "0680",
+        "text": "Peque - Antioquia"
+    },
+    {
+        "value": "0681",
+        "text": "Pereira - Risaralda"
+    },
+    {
+        "value": "0682",
+        "text": "Pesca - Boyaca"
+    },
+    {
+        "value": "0683",
+        "text": "Piamonte - Cauca"
+    },
+    {
+        "value": "0684",
+        "text": "Piedecuesta - Santander"
+    },
+    {
+        "value": "0685",
+        "text": "Piedras - Tolima"
+    },
+    {
+        "value": "0686",
+        "text": "Piendamo - Cauca"
+    },
+    {
+        "value": "0687",
+        "text": "Pijao - Quindio"
+    },
+    {
+        "value": "0688",
+        "text": "Pijiño Del Carmen - Magdalena"
+    },
+    {
+        "value": "0689",
+        "text": "Pinchote - Santander"
+    },
+    {
+        "value": "0690",
+        "text": "Pinillos - Bolivar"
+    },
+    {
+        "value": "0691",
+        "text": "Piojo - Atlantico"
+    },
+    {
+        "value": "0692",
+        "text": "Pisba - Boyaca"
+    },
+    {
+        "value": "0693",
+        "text": "Pital - Huila"
+    },
+    {
+        "value": "0694",
+        "text": "Pitalito - Huila"
+    },
+    {
+        "value": "0695",
+        "text": "Pivijay - Magdalena"
+    },
+    {
+        "value": "0696",
+        "text": "Planadas - Tolima"
+    },
+    {
+        "value": "0697",
+        "text": "Planeta Rica - Cordoba"
+    },
+    {
+        "value": "0698",
+        "text": "Plato - Magdalena"
+    },
+    {
+        "value": "0699",
+        "text": "Policarpa - Nariño"
+    },
+    {
+        "value": "0700",
+        "text": "Polonuevo - Atlantico"
+    },
+    {
+        "value": "0701",
+        "text": "Ponedera - Atlantico"
+    },
+    {
+        "value": "0702",
+        "text": "Popayan - Cauca"
+    },
+    {
+        "value": "0703",
+        "text": "Pore - Casanare"
+    },
+    {
+        "value": "0704",
+        "text": "Potosi - Nariño"
+    },
+    {
+        "value": "0705",
+        "text": "Pradera - Valle Del Cauca"
+    },
+    {
+        "value": "0706",
+        "text": "Prado - Tolima"
+    },
+    {
+        "value": "0707",
+        "text": "Providencia - Nariño"
+    },
+    {
+        "value": "0708",
+        "text": "Providencia - San Andres"
+    },
+    {
+        "value": "0709",
+        "text": "Pueblo Bello - Cesar"
+    },
+    {
+        "value": "0710",
+        "text": "Pueblo Nuevo - Cordoba"
+    },
+    {
+        "value": "0711",
+        "text": "Pueblo Rico - Risaralda"
+    },
+    {
+        "value": "0712",
+        "text": "Pueblorrico - Antioquia"
+    },
+    {
+        "value": "0713",
+        "text": "Puebloviejo - Magdalena"
+    },
+    {
+        "value": "0714",
+        "text": "Puente Nacional - Santander"
+    },
+    {
+        "value": "0715",
+        "text": "Puerres - Nariño"
+    },
+    {
+        "value": "0716",
+        "text": "Puerto Alegria - Amazonas"
+    },
+    {
+        "value": "0717",
+        "text": "Puerto Arica - Amazonas"
+    },
+    {
+        "value": "0718",
+        "text": "Puerto Asis - Putumayo"
+    },
+    {
+        "value": "0719",
+        "text": "Puerto Berrio - Antioquia"
+    },
+    {
+        "value": "0720",
+        "text": "Puerto Boyaca - Boyaca"
+    },
+    {
+        "value": "0721",
+        "text": "Puerto Caicedo - Putumayo"
+    },
+    {
+        "value": "0722",
+        "text": "Puerto Carreño - Vichada"
+    },
+    {
+        "value": "0723",
+        "text": "Puerto Colombia - Atlantico"
+    },
+    {
+        "value": "0724",
+        "text": "Puerto Colombia - Guainia"
+    },
+    {
+        "value": "0725",
+        "text": "Puerto Concordia - Meta"
+    },
+    {
+        "value": "0726",
+        "text": "Puerto Escondido - Cordoba"
+    },
+    {
+        "value": "0727",
+        "text": "Puerto Gaitan - Meta"
+    },
+    {
+        "value": "0728",
+        "text": "Puerto Guzman - Putumayo"
+    },
+    {
+        "value": "0729",
+        "text": "Puerto Libertador - Cordoba"
+    },
+    {
+        "value": "0730",
+        "text": "Puerto Lleras - Meta"
+    },
+    {
+        "value": "0731",
+        "text": "Puerto Lopez - Meta"
+    },
+    {
+        "value": "0732",
+        "text": "Puerto Nare - Antioquia"
+    },
+    {
+        "value": "0733",
+        "text": "Puerto Nariño - Amazonas"
+    },
+    {
+        "value": "0734",
+        "text": "Puerto Parra - Santander"
+    },
+    {
+        "value": "0735",
+        "text": "Puerto Rico - Caqueta"
+    },
+    {
+        "value": "0736",
+        "text": "Puerto Rico - Meta"
+    },
+    {
+        "value": "0737",
+        "text": "Puerto Rondon - Arauca"
+    },
+    {
+        "value": "0738",
+        "text": "Puerto Salgar - Cundinamarca"
+    },
+    {
+        "value": "0739",
+        "text": "Puerto Santander - Amazonas"
+    },
+    {
+        "value": "0740",
+        "text": "Puerto Santander - N. De Santander"
+    },
+    {
+        "value": "0741",
+        "text": "Puerto Tejada - Cauca"
+    },
+    {
+        "value": "0742",
+        "text": "Puerto Triunfo - Antioquia"
+    },
+    {
+        "value": "0743",
+        "text": "Puerto Wilches - Santander"
+    },
+    {
+        "value": "0744",
+        "text": "Puli - Cundinamarca"
+    },
+    {
+        "value": "0745",
+        "text": "Pupiales - Nariño"
+    },
+    {
+        "value": "0746",
+        "text": "Purace - Cauca"
+    },
+    {
+        "value": "0747",
+        "text": "Purificacion - Tolima"
+    },
+    {
+        "value": "0748",
+        "text": "Purisima - Cordoba"
+    },
+    {
+        "value": "0749",
+        "text": "Quebradanegra - Cundinamarca"
+    },
+    {
+        "value": "0750",
+        "text": "Quetame - Cundinamarca"
+    },
+    {
+        "value": "0751",
+        "text": "Quibdo - Choco"
+    },
+    {
+        "value": "0752",
+        "text": "Quimbaya - Quindio"
+    },
+    {
+        "value": "0753",
+        "text": "Quinchia - Risaralda"
+    },
+    {
+        "value": "0754",
+        "text": "Quipama - Boyaca"
+    },
+    {
+        "value": "0755",
+        "text": "Quipile - Cundinamarca"
+    },
+    {
+        "value": "0756",
+        "text": "Ragonvalia - N. De Santander"
+    },
+    {
+        "value": "0757",
+        "text": "Ramiriqui - Boyaca"
+    },
+    {
+        "value": "0758",
+        "text": "Raquira - Boyaca"
+    },
+    {
+        "value": "0759",
+        "text": "Recetor - Casanare"
+    },
+    {
+        "value": "0760",
+        "text": "Regidor - Bolivar"
+    },
+    {
+        "value": "0761",
+        "text": "Remedios - Antioquia"
+    },
+    {
+        "value": "0762",
+        "text": "Remolino - Magdalena"
+    },
+    {
+        "value": "0763",
+        "text": "Repelon - Atlantico"
+    },
+    {
+        "value": "0764",
+        "text": "Restrepo - Meta"
+    },
+    {
+        "value": "0765",
+        "text": "Restrepo - Valle Del Cauca"
+    },
+    {
+        "value": "0766",
+        "text": "Retiro - Antioquia"
+    },
+    {
+        "value": "0767",
+        "text": "Ricaurte - Cundinamarca"
+    },
+    {
+        "value": "0768",
+        "text": "Ricaurte - Nariño"
+    },
+    {
+        "value": "0769",
+        "text": "Rio De Oro - Cesar"
+    },
+    {
+        "value": "0770",
+        "text": "Rio Iro - Choco"
+    },
+    {
+        "value": "0771",
+        "text": "Rio Quito - Choco"
+    },
+    {
+        "value": "0772",
+        "text": "Rio Viejo - Bolivar"
+    },
+    {
+        "value": "0773",
+        "text": "Rioblanco - Tolima"
+    },
+    {
+        "value": "0774",
+        "text": "Riofrio - Valle Del Cauca"
+    },
+    {
+        "value": "0775",
+        "text": "Riohacha - La Guajira"
+    },
+    {
+        "value": "0776",
+        "text": "Rionegro - Antioquia"
+    },
+    {
+        "value": "0777",
+        "text": "Rionegro - Santander"
+    },
+    {
+        "value": "0778",
+        "text": "Riosucio - Caldas"
+    },
+    {
+        "value": "0779",
+        "text": "Riosucio - Choco"
+    },
+    {
+        "value": "0780",
+        "text": "Risaralda - Caldas"
+    },
+    {
+        "value": "0781",
+        "text": "Rivera - Huila"
+    },
+    {
+        "value": "0782",
+        "text": "Roberto Payan - Nariño"
+    },
+    {
+        "value": "0783",
+        "text": "Roldanillo - Valle Del Cauca"
+    },
+    {
+        "value": "0784",
+        "text": "Roncesvalles - Tolima"
+    },
+    {
+        "value": "0785",
+        "text": "Rondon - Boyaca"
+    },
+    {
+        "value": "0786",
+        "text": "Rosas - Cauca"
+    },
+    {
+        "value": "0787",
+        "text": "Rovira - Tolima"
+    },
+    {
+        "value": "0788",
+        "text": "Sabana De Torres - Santander"
+    },
+    {
+        "value": "0789",
+        "text": "Sabanagrande - Atlantico"
+    },
+    {
+        "value": "0790",
+        "text": "Sabanalarga - Antioquia"
+    },
+    {
+        "value": "0791",
+        "text": "Sabanalarga - Atlantico"
+    },
+    {
+        "value": "0792",
+        "text": "Sabanalarga - Casanare"
+    },
+    {
+        "value": "0793",
+        "text": "Sabanas De San Angel - Magdalena"
+    },
+    {
+        "value": "0794",
+        "text": "Sabaneta - Antioquia"
+    },
+    {
+        "value": "0795",
+        "text": "Saboya - Boyaca"
+    },
+    {
+        "value": "0796",
+        "text": "Sacama - Casanare"
+    },
+    {
+        "value": "0797",
+        "text": "Sachica - Boyaca"
+    },
+    {
+        "value": "0798",
+        "text": "Sahagun - Cordoba"
+    },
+    {
+        "value": "0799",
+        "text": "Saladoblanco - Huila"
+    },
+    {
+        "value": "0800",
+        "text": "Salamina - Caldas"
+    },
+    {
+        "value": "0801",
+        "text": "Salamina - Magdalena"
+    },
+    {
+        "value": "0802",
+        "text": "Salazar - N. De Santander"
+    },
+    {
+        "value": "0803",
+        "text": "Saldaña - Tolima"
+    },
+    {
+        "value": "0804",
+        "text": "Salento - Quindio"
+    },
+    {
+        "value": "0805",
+        "text": "Salgar - Antioquia"
+    },
+    {
+        "value": "0806",
+        "text": "Samaca - Boyaca"
+    },
+    {
+        "value": "0807",
+        "text": "Samana - Caldas"
+    },
+    {
+        "value": "0808",
+        "text": "Samaniego - Nariño"
+    },
+    {
+        "value": "0809",
+        "text": "Sampues - Sucre"
+    },
+    {
+        "value": "0810",
+        "text": "San Agustin - Huila"
+    },
+    {
+        "value": "0811",
+        "text": "San Alberto - Cesar"
+    },
+    {
+        "value": "0812",
+        "text": "San Andres - San Andres"
+    },
+    {
+        "value": "0813",
+        "text": "San Andres - Santander"
+    },
+    {
+        "value": "0814",
+        "text": "San Andres De Cuerquia - Antioquia"
+    },
+    {
+        "value": "0815",
+        "text": "San Andres De Tumaco - Nariño"
+    },
+    {
+        "value": "0816",
+        "text": "San Andres Sotavento - Cordoba"
+    },
+    {
+        "value": "0817",
+        "text": "San Antero - Cordoba"
+    },
+    {
+        "value": "0818",
+        "text": "San Antonio - Tolima"
+    },
+    {
+        "value": "0819",
+        "text": "San Antonio Del Tequendama - Cundinamarca"
+    },
+    {
+        "value": "0820",
+        "text": "San Benito - Santander"
+    },
+    {
+        "value": "0821",
+        "text": "San Benito Abad - Sucre"
+    },
+    {
+        "value": "0822",
+        "text": "San Bernardo - Cundinamarca"
+    },
+    {
+        "value": "0823",
+        "text": "San Bernardo - Nariño"
+    },
+    {
+        "value": "0824",
+        "text": "San Bernardo Del Viento - Cordoba"
+    },
+    {
+        "value": "0825",
+        "text": "San Calixto - N. De Santander"
+    },
+    {
+        "value": "0826",
+        "text": "San Carlos - Antioquia"
+    },
+    {
+        "value": "0827",
+        "text": "San Carlos - Cordoba"
+    },
+    {
+        "value": "0828",
+        "text": "San Carlos De Guaroa - Meta"
+    },
+    {
+        "value": "0829",
+        "text": "San Cayetano - Cundinamarca"
+    },
+    {
+        "value": "0830",
+        "text": "San Cayetano - N. De Santander"
+    },
+    {
+        "value": "0831",
+        "text": "San Cristobal - Bolivar"
+    },
+    {
+        "value": "0832",
+        "text": "San Diego - Cesar"
+    },
+    {
+        "value": "0833",
+        "text": "San Eduardo - Boyaca"
+    },
+    {
+        "value": "0834",
+        "text": "San Estanislao - Bolivar"
+    },
+    {
+        "value": "0835",
+        "text": "San Felipe - Guainia"
+    },
+    {
+        "value": "0836",
+        "text": "San Fernando - Bolivar"
+    },
+    {
+        "value": "0837",
+        "text": "San Francisco - Antioquia"
+    },
+    {
+        "value": "0838",
+        "text": "San Francisco - Cundinamarca"
+    },
+    {
+        "value": "0839",
+        "text": "San Francisco - Putumayo"
+    },
+    {
+        "value": "0840",
+        "text": "San Gil - Santander"
+    },
+    {
+        "value": "0841",
+        "text": "San Jacinto - Bolivar"
+    },
+    {
+        "value": "0842",
+        "text": "San Jacinto Del Cauca - Bolivar"
+    },
+    {
+        "value": "0843",
+        "text": "San Jeronimo - Antioquia"
+    },
+    {
+        "value": "0844",
+        "text": "San Joaquin - Santander"
+    },
+    {
+        "value": "0845",
+        "text": "San Jose - Caldas"
+    },
+    {
+        "value": "0846",
+        "text": "San Jose De La Montaña - Antioquia"
+    },
+    {
+        "value": "0847",
+        "text": "San Jose De Miranda - Santander"
+    },
+    {
+        "value": "0848",
+        "text": "San Jose De Pare - Boyaca"
+    },
+    {
+        "value": "0849",
+        "text": "San Jose Del Fragua - Caqueta"
+    },
+    {
+        "value": "0850",
+        "text": "San Jose Del Guaviare - Guaviare"
+    },
+    {
+        "value": "0851",
+        "text": "San Jose Del Palmar - Choco"
+    },
+    {
+        "value": "0852",
+        "text": "San Juan De Arama - Meta"
+    },
+    {
+        "value": "0853",
+        "text": "San Juan De Betulia - Sucre"
+    },
+    {
+        "value": "0854",
+        "text": "San Juan De Rio Seco - Cundinamarca"
+    },
+    {
+        "value": "0855",
+        "text": "San Juan De Uraba - Antioquia"
+    },
+    {
+        "value": "0856",
+        "text": "San Juan Del Cesar - La Guajira"
+    },
+    {
+        "value": "0857",
+        "text": "San Juan Nepomuceno - Bolivar"
+    },
+    {
+        "value": "0858",
+        "text": "San Juanito - Meta"
+    },
+    {
+        "value": "0859",
+        "text": "San Lorenzo - Nariño"
+    },
+    {
+        "value": "0860",
+        "text": "San Luis - Antioquia"
+    },
+    {
+        "value": "0861",
+        "text": "San Luis - Tolima"
+    },
+    {
+        "value": "0862",
+        "text": "San Luis De Gaceno - Boyaca"
+    },
+    {
+        "value": "0863",
+        "text": "San Luis De Palenque - Casanare"
+    },
+    {
+        "value": "0864",
+        "text": "San Luis De Since - Sucre"
+    },
+    {
+        "value": "0865",
+        "text": "San Marcos - Sucre"
+    },
+    {
+        "value": "0866",
+        "text": "San Martin - Cesar"
+    },
+    {
+        "value": "0867",
+        "text": "San Martin - Meta"
+    },
+    {
+        "value": "0868",
+        "text": "San Martin De Loba - Bolivar"
+    },
+    {
+        "value": "0869",
+        "text": "San Mateo - Boyaca"
+    },
+    {
+        "value": "0870",
+        "text": "San Miguel - Putumayo"
+    },
+    {
+        "value": "0871",
+        "text": "San Miguel - Santander"
+    },
+    {
+        "value": "0872",
+        "text": "San Miguel De Sema - Boyaca"
+    },
+    {
+        "value": "0873",
+        "text": "San Onofre - Sucre"
+    },
+    {
+        "value": "0874",
+        "text": "San Pablo - Bolivar"
+    },
+    {
+        "value": "0875",
+        "text": "San Pablo - Nariño"
+    },
+    {
+        "value": "0876",
+        "text": "San Pablo De Borbur - Boyaca"
+    },
+    {
+        "value": "0877",
+        "text": "San Pedro - Antioquia"
+    },
+    {
+        "value": "0878",
+        "text": "San Pedro - Sucre"
+    },
+    {
+        "value": "0879",
+        "text": "San Pedro - Valle Del Cauca"
+    },
+    {
+        "value": "0880",
+        "text": "San Pedro De Cartago - Nariño"
+    },
+    {
+        "value": "0881",
+        "text": "San Pedro De Uraba - Antioquia"
+    },
+    {
+        "value": "0882",
+        "text": "San Pelayo - Cordoba"
+    },
+    {
+        "value": "0883",
+        "text": "San Rafael - Antioquia"
+    },
+    {
+        "value": "0884",
+        "text": "San Roque - Antioquia"
+    },
+    {
+        "value": "0885",
+        "text": "San Sebastian - Cauca"
+    },
+    {
+        "value": "0886",
+        "text": "San Sebastian De Buenavista - Magdalena"
+    },
+    {
+        "value": "0887",
+        "text": "San Vicente - Antioquia"
+    },
+    {
+        "value": "0888",
+        "text": "San Vicente De Chucuri - Santander"
+    },
+    {
+        "value": "0889",
+        "text": "San Vicente Del Caguan - Caqueta"
+    },
+    {
+        "value": "0890",
+        "text": "San Zenon - Magdalena"
+    },
+    {
+        "value": "0891",
+        "text": "Sandona - Nariño"
+    },
+    {
+        "value": "0892",
+        "text": "Santa Ana - Magdalena"
+    },
+    {
+        "value": "0893",
+        "text": "Santa Barbara - Antioquia"
+    },
+    {
+        "value": "0894",
+        "text": "Santa Barbara - Nariño"
+    },
+    {
+        "value": "0895",
+        "text": "Santa Barbara - Santander"
+    },
+    {
+        "value": "0896",
+        "text": "Santa Barbara De Pinto - Magdalena"
+    },
+    {
+        "value": "0897",
+        "text": "Santa Catalina - Bolivar"
+    },
+    {
+        "value": "0898",
+        "text": "Santa Helena Del Opon - Santander"
+    },
+    {
+        "value": "0899",
+        "text": "Santa Isabel - Tolima"
+    },
+    {
+        "value": "0900",
+        "text": "Santa Lucia - Atlantico"
+    },
+    {
+        "value": "0901",
+        "text": "Santa Maria - Boyaca"
+    },
+    {
+        "value": "0902",
+        "text": "Santa Maria - Huila"
+    },
+    {
+        "value": "0903",
+        "text": "Santa Marta - Magdalena"
+    },
+    {
+        "value": "0904",
+        "text": "Santa Rosa - Bolivar"
+    },
+    {
+        "value": "0905",
+        "text": "Santa Rosa - Cauca"
+    },
+    {
+        "value": "0906",
+        "text": "Santa Rosa De Cabal - Risaralda"
+    },
+    {
+        "value": "0907",
+        "text": "Santa Rosa De Osos - Antioquia"
+    },
+    {
+        "value": "0908",
+        "text": "Santa Rosa De Viterbo - Boyaca"
+    },
+    {
+        "value": "0909",
+        "text": "Santa Rosa Del Sur - Bolivar"
+    },
+    {
+        "value": "0910",
+        "text": "Santa Rosalia - Vichada"
+    },
+    {
+        "value": "0911",
+        "text": "Santa Sofia - Boyaca"
+    },
+    {
+        "value": "0912",
+        "text": "Santacruz - Nariño"
+    },
+    {
+        "value": "0913",
+        "text": "Santafe De Antioquia - Antioquia"
+    },
+    {
+        "value": "0914",
+        "text": "Santana - Boyaca"
+    },
+    {
+        "value": "0915",
+        "text": "Santander De Quilichao - Cauca"
+    },
+    {
+        "value": "0916",
+        "text": "Santiago - N. De Santander"
+    },
+    {
+        "value": "0917",
+        "text": "Santiago - Putumayo"
+    },
+    {
+        "value": "0918",
+        "text": "Santiago De Tolu - Sucre"
+    },
+    {
+        "value": "0919",
+        "text": "Santo Domingo - Antioquia"
+    },
+    {
+        "value": "0920",
+        "text": "Santo Tomas - Atlantico"
+    },
+    {
+        "value": "0921",
+        "text": "Santuario - Risaralda"
+    },
+    {
+        "value": "0922",
+        "text": "Sapuyes - Nariño"
+    },
+    {
+        "value": "0923",
+        "text": "Saravena - Arauca"
+    },
+    {
+        "value": "0924",
+        "text": "Sardinata - N. De Santander"
+    },
+    {
+        "value": "0925",
+        "text": "Sasaima - Cundinamarca"
+    },
+    {
+        "value": "0926",
+        "text": "Sativanorte - Boyaca"
+    },
+    {
+        "value": "0927",
+        "text": "Sativasur - Boyaca"
+    },
+    {
+        "value": "0928",
+        "text": "Segovia - Antioquia"
+    },
+    {
+        "value": "0929",
+        "text": "Sesquile - Cundinamarca"
+    },
+    {
+        "value": "0930",
+        "text": "Sevilla - Valle Del Cauca"
+    },
+    {
+        "value": "0931",
+        "text": "Siachoque - Boyaca"
+    },
+    {
+        "value": "0932",
+        "text": "Sibate - Cundinamarca"
+    },
+    {
+        "value": "0933",
+        "text": "Sibundoy - Putumayo"
+    },
+    {
+        "value": "0934",
+        "text": "Silos - N. De Santander"
+    },
+    {
+        "value": "0935",
+        "text": "Silvania - Cundinamarca"
+    },
+    {
+        "value": "0936",
+        "text": "Silvia - Cauca"
+    },
+    {
+        "value": "0937",
+        "text": "Simacota - Santander"
+    },
+    {
+        "value": "0938",
+        "text": "Simijaca - Cundinamarca"
+    },
+    {
+        "value": "0939",
+        "text": "Simiti - Bolivar"
+    },
+    {
+        "value": "0940",
+        "text": "Sincelejo - Sucre"
+    },
+    {
+        "value": "0941",
+        "text": "Sipi - Choco"
+    },
+    {
+        "value": "0942",
+        "text": "Sitionuevo - Magdalena"
+    },
+    {
+        "value": "0943",
+        "text": "Soacha - Cundinamarca"
+    },
+    {
+        "value": "0944",
+        "text": "Soata - Boyaca"
+    },
+    {
+        "value": "0945",
+        "text": "Socha - Boyaca"
+    },
+    {
+        "value": "0946",
+        "text": "Socorro - Santander"
+    },
+    {
+        "value": "0947",
+        "text": "Socota - Boyaca"
+    },
+    {
+        "value": "0948",
+        "text": "Sogamoso - Boyaca"
+    },
+    {
+        "value": "0949",
+        "text": "Solano - Caqueta"
+    },
+    {
+        "value": "0950",
+        "text": "Soledad - Atlantico"
+    },
+    {
+        "value": "0951",
+        "text": "Solita - Caqueta"
+    },
+    {
+        "value": "0952",
+        "text": "Somondoco - Boyaca"
+    },
+    {
+        "value": "0953",
+        "text": "Sonson - Antioquia"
+    },
+    {
+        "value": "0954",
+        "text": "Sopetran - Antioquia"
+    },
+    {
+        "value": "0955",
+        "text": "Soplaviento - Bolivar"
+    },
+    {
+        "value": "0956",
+        "text": "Sopo - Cundinamarca"
+    },
+    {
+        "value": "0957",
+        "text": "Sora - Boyaca"
+    },
+    {
+        "value": "0958",
+        "text": "Soraca - Boyaca"
+    },
+    {
+        "value": "0959",
+        "text": "Sotaquira - Boyaca"
+    },
+    {
+        "value": "0960",
+        "text": "Sotara - Cauca"
+    },
+    {
+        "value": "0961",
+        "text": "Suaita - Santander"
+    },
+    {
+        "value": "0962",
+        "text": "Suan - Atlantico"
+    },
+    {
+        "value": "0963",
+        "text": "Suarez - Cauca"
+    },
+    {
+        "value": "0964",
+        "text": "Suarez - Tolima"
+    },
+    {
+        "value": "0965",
+        "text": "Suaza - Huila"
+    },
+    {
+        "value": "0966",
+        "text": "Subachoque - Cundinamarca"
+    },
+    {
+        "value": "0967",
+        "text": "Sucre - Cauca"
+    },
+    {
+        "value": "0968",
+        "text": "Sucre - Santander"
+    },
+    {
+        "value": "0969",
+        "text": "Sucre - Sucre"
+    },
+    {
+        "value": "0970",
+        "text": "Suesca - Cundinamarca"
+    },
+    {
+        "value": "0971",
+        "text": "Supata - Cundinamarca"
+    },
+    {
+        "value": "0972",
+        "text": "Supia - Caldas"
+    },
+    {
+        "value": "0973",
+        "text": "Surata - Santander"
+    },
+    {
+        "value": "0974",
+        "text": "Susa - Cundinamarca"
+    },
+    {
+        "value": "0975",
+        "text": "Susacon - Boyaca"
+    },
+    {
+        "value": "0976",
+        "text": "Sutamarchan - Boyaca"
+    },
+    {
+        "value": "0977",
+        "text": "Sutatausa - Cundinamarca"
+    },
+    {
+        "value": "0978",
+        "text": "Sutatenza - Boyaca"
+    },
+    {
+        "value": "0979",
+        "text": "Tabio - Cundinamarca"
+    },
+    {
+        "value": "0980",
+        "text": "Tado - Choco"
+    },
+    {
+        "value": "0981",
+        "text": "Talaigua Nuevo - Bolivar"
+    },
+    {
+        "value": "0982",
+        "text": "Tamalameque - Cesar"
+    },
+    {
+        "value": "0983",
+        "text": "Tamara - Casanare"
+    },
+    {
+        "value": "0984",
+        "text": "Tame - Arauca"
+    },
+    {
+        "value": "0985",
+        "text": "Tamesis - Antioquia"
+    },
+    {
+        "value": "0986",
+        "text": "Taminango - Nariño"
+    },
+    {
+        "value": "0987",
+        "text": "Tangua - Nariño"
+    },
+    {
+        "value": "0988",
+        "text": "Taraira - Vaupes"
+    },
+    {
+        "value": "0989",
+        "text": "Tarapaca - Amazonas"
+    },
+    {
+        "value": "0990",
+        "text": "Taraza - Antioquia"
+    },
+    {
+        "value": "0991",
+        "text": "Tarqui - Huila"
+    },
+    {
+        "value": "0992",
+        "text": "Tarso - Antioquia"
+    },
+    {
+        "value": "0993",
+        "text": "Tasco - Boyaca"
+    },
+    {
+        "value": "0994",
+        "text": "Tauramena - Casanare"
+    },
+    {
+        "value": "0995",
+        "text": "Tausa - Cundinamarca"
+    },
+    {
+        "value": "0996",
+        "text": "Tello - Huila"
+    },
+    {
+        "value": "0997",
+        "text": "Tena - Cundinamarca"
+    },
+    {
+        "value": "0998",
+        "text": "Tenerife - Magdalena"
+    },
+    {
+        "value": "0999",
+        "text": "Tenjo - Cundinamarca"
+    },
+    {
+        "value": "1000",
+        "text": "Tenza - Boyaca"
+    },
+    {
+        "value": "1001",
+        "text": "Teorama - N. De Santander"
+    },
+    {
+        "value": "1002",
+        "text": "Teruel - Huila"
+    },
+    {
+        "value": "1003",
+        "text": "Tesalia - Huila"
+    },
+    {
+        "value": "1004",
+        "text": "Tibacuy - Cundinamarca"
+    },
+    {
+        "value": "1005",
+        "text": "Tibana - Boyaca"
+    },
+    {
+        "value": "1006",
+        "text": "Tibasosa - Boyaca"
+    },
+    {
+        "value": "1007",
+        "text": "Tibirita - Cundinamarca"
+    },
+    {
+        "value": "1008",
+        "text": "Tibu - N. De Santander"
+    },
+    {
+        "value": "1009",
+        "text": "Tierralta - Cordoba"
+    },
+    {
+        "value": "1010",
+        "text": "Timana - Huila"
+    },
+    {
+        "value": "1011",
+        "text": "Timbio - Cauca"
+    },
+    {
+        "value": "1012",
+        "text": "Timbiqui - Cauca"
+    },
+    {
+        "value": "1013",
+        "text": "Tinjaca - Boyaca"
+    },
+    {
+        "value": "1014",
+        "text": "Tipacoque - Boyaca"
+    },
+    {
+        "value": "1015",
+        "text": "Tiquisio - Bolivar"
+    },
+    {
+        "value": "1016",
+        "text": "Titiribi - Antioquia"
+    },
+    {
+        "value": "1017",
+        "text": "Toca - Boyaca"
+    },
+    {
+        "value": "1018",
+        "text": "Tocaima - Cundinamarca"
+    },
+    {
+        "value": "1019",
+        "text": "Tocancipa - Cundinamarca"
+    },
+    {
+        "value": "1020",
+        "text": "Togui - Boyaca"
+    },
+    {
+        "value": "1021",
+        "text": "Toledo - Antioquia"
+    },
+    {
+        "value": "1022",
+        "text": "Toledo - N. De Santander"
+    },
+    {
+        "value": "1023",
+        "text": "Tolu Viejo - Sucre"
+    },
+    {
+        "value": "1024",
+        "text": "Tona - Santander"
+    },
+    {
+        "value": "1025",
+        "text": "Topaga - Boyaca"
+    },
+    {
+        "value": "1026",
+        "text": "Topaipi - Cundinamarca"
+    },
+    {
+        "value": "1027",
+        "text": "Toribio - Cauca"
+    },
+    {
+        "value": "1028",
+        "text": "Toro - Valle Del Cauca"
+    },
+    {
+        "value": "1029",
+        "text": "Tota - Boyaca"
+    },
+    {
+        "value": "1030",
+        "text": "Totoro - Cauca"
+    },
+    {
+        "value": "1031",
+        "text": "Trinidad - Casanare"
+    },
+    {
+        "value": "1032",
+        "text": "Trujillo - Valle Del Cauca"
+    },
+    {
+        "value": "1033",
+        "text": "Tubara - Atlantico"
+    },
+    {
+        "value": "1034",
+        "text": "Tulua - Valle Del Cauca"
+    },
+    {
+        "value": "1035",
+        "text": "Tunja - Boyaca"
+    },
+    {
+        "value": "1036",
+        "text": "Tunungua - Boyaca"
+    },
+    {
+        "value": "1037",
+        "text": "Tuquerres - Nariño"
+    },
+    {
+        "value": "1038",
+        "text": "Turbaco - Bolivar"
+    },
+    {
+        "value": "1039",
+        "text": "Turbana - Bolivar"
+    },
+    {
+        "value": "1040",
+        "text": "Turbo - Antioquia"
+    },
+    {
+        "value": "1041",
+        "text": "Turmeque - Boyaca"
+    },
+    {
+        "value": "1042",
+        "text": "Tuta - Boyaca"
+    },
+    {
+        "value": "1043",
+        "text": "Tutaza - Boyaca"
+    },
+    {
+        "value": "1044",
+        "text": "Ubala - Cundinamarca"
+    },
+    {
+        "value": "1045",
+        "text": "Ubaque - Cundinamarca"
+    },
+    {
+        "value": "1046",
+        "text": "Ulloa - Valle Del Cauca"
+    },
+    {
+        "value": "1047",
+        "text": "Umbita - Boyaca"
+    },
+    {
+        "value": "1048",
+        "text": "Une - Cundinamarca"
+    },
+    {
+        "value": "1049",
+        "text": "Unguia - Choco"
+    },
+    {
+        "value": "1050",
+        "text": "Union Panamericana - Choco"
+    },
+    {
+        "value": "1051",
+        "text": "Uramita - Antioquia"
+    },
+    {
+        "value": "1052",
+        "text": "Uribe - Meta"
+    },
+    {
+        "value": "1053",
+        "text": "Uribia - La Guajira"
+    },
+    {
+        "value": "1054",
+        "text": "Urrao - Antioquia"
+    },
+    {
+        "value": "1055",
+        "text": "Urumita - La Guajira"
+    },
+    {
+        "value": "1056",
+        "text": "Usiacuri - Atlantico"
+    },
+    {
+        "value": "1057",
+        "text": "Utica - Cundinamarca"
+    },
+    {
+        "value": "1058",
+        "text": "Valdivia - Antioquia"
+    },
+    {
+        "value": "1059",
+        "text": "Valencia - Cordoba"
+    },
+    {
+        "value": "1060",
+        "text": "Valle De San Jose - Santander"
+    },
+    {
+        "value": "1061",
+        "text": "Valle De San Juan - Tolima"
+    },
+    {
+        "value": "1062",
+        "text": "Valle Del Guamuez - Putumayo"
+    },
+    {
+        "value": "1063",
+        "text": "Valledupar - Cesar"
+    },
+    {
+        "value": "1064",
+        "text": "Valparaiso - Antioquia"
+    },
+    {
+        "value": "1065",
+        "text": "Valparaiso - Caqueta"
+    },
+    {
+        "value": "1066",
+        "text": "Vegachi - Antioquia"
+    },
+    {
+        "value": "1067",
+        "text": "Velez - Santander"
+    },
+    {
+        "value": "1068",
+        "text": "Venadillo - Tolima"
+    },
+    {
+        "value": "1069",
+        "text": "Venecia - Antioquia"
+    },
+    {
+        "value": "1070",
+        "text": "Venecia - Cundinamarca"
+    },
+    {
+        "value": "1071",
+        "text": "Ventaquemada - Boyaca"
+    },
+    {
+        "value": "1072",
+        "text": "Vergara - Cundinamarca"
+    },
+    {
+        "value": "1073",
+        "text": "Versalles - Valle Del Cauca"
+    },
+    {
+        "value": "1074",
+        "text": "Vetas - Santander"
+    },
+    {
+        "value": "1075",
+        "text": "Viani - Cundinamarca"
+    },
+    {
+        "value": "1076",
+        "text": "Victoria - Caldas"
+    },
+    {
+        "value": "1077",
+        "text": "Vigia Del Fuerte - Antioquia"
+    },
+    {
+        "value": "1078",
+        "text": "Vijes - Valle Del Cauca"
+    },
+    {
+        "value": "1079",
+        "text": "Villa Caro - N. De Santander"
+    },
+    {
+        "value": "1080",
+        "text": "Villa De Leyva - Boyaca"
+    },
+    {
+        "value": "1081",
+        "text": "Villa De San Diego De Ubate - Cundinamarca"
+    },
+    {
+        "value": "1082",
+        "text": "Villa Del Rosario - N. De Santander"
+    },
+    {
+        "value": "1083",
+        "text": "Villa Rica - Cauca"
+    },
+    {
+        "value": "1084",
+        "text": "Villagarzon - Putumayo"
+    },
+    {
+        "value": "1085",
+        "text": "Villagomez - Cundinamarca"
+    },
+    {
+        "value": "1086",
+        "text": "Villahermosa - Tolima"
+    },
+    {
+        "value": "1087",
+        "text": "Villamaria - Caldas"
+    },
+    {
+        "value": "1088",
+        "text": "Villanueva - Bolivar"
+    },
+    {
+        "value": "1089",
+        "text": "Villanueva - Casanare"
+    },
+    {
+        "value": "1090",
+        "text": "Villanueva - La Guajira"
+    },
+    {
+        "value": "1091",
+        "text": "Villanueva - Santander"
+    },
+    {
+        "value": "1092",
+        "text": "Villapinzon - Cundinamarca"
+    },
+    {
+        "value": "1093",
+        "text": "Villarrica - Tolima"
+    },
+    {
+        "value": "1094",
+        "text": "Villavicencio - Meta"
+    },
+    {
+        "value": "1095",
+        "text": "Villavieja - Huila"
+    },
+    {
+        "value": "1096",
+        "text": "Villeta - Cundinamarca"
+    },
+    {
+        "value": "1097",
+        "text": "Viota - Cundinamarca"
+    },
+    {
+        "value": "1098",
+        "text": "Viracacha - Boyaca"
+    },
+    {
+        "value": "1099",
+        "text": "Vistahermosa - Meta"
+    },
+    {
+        "value": "1100",
+        "text": "Viterbo - Caldas"
+    },
+    {
+        "value": "1101",
+        "text": "Yacopi - Cundinamarca"
+    },
+    {
+        "value": "1102",
+        "text": "Yacuanquer - Nariño"
+    },
+    {
+        "value": "1103",
+        "text": "Yaguara - Huila"
+    },
+    {
+        "value": "1104",
+        "text": "Yali - Antioquia"
+    },
+    {
+        "value": "1105",
+        "text": "Yarumal - Antioquia"
+    },
+    {
+        "value": "1106",
+        "text": "Yavarate - Vaupes"
+    },
+    {
+        "value": "1107",
+        "text": "Yolombo - Antioquia"
+    },
+    {
+        "value": "1108",
+        "text": "Yondo - Antioquia"
+    },
+    {
+        "value": "1109",
+        "text": "Yopal - Casanare"
+    },
+    {
+        "value": "1110",
+        "text": "Yotoco - Valle Del Cauca"
+    },
+    {
+        "value": "1111",
+        "text": "Yumbo - Valle Del Cauca"
+    },
+    {
+        "value": "1112",
+        "text": "Zambrano - Bolivar"
+    },
+    {
+        "value": "1113",
+        "text": "Zapatoca - Santander"
+    },
+    {
+        "value": "1114",
+        "text": "Zapayan - Magdalena"
+    },
+    {
+        "value": "1115",
+        "text": "Zaragoza - Antioquia"
+    },
+    {
+        "value": "1116",
+        "text": "Zarzal - Valle Del Cauca"
+    },
+    {
+        "value": "1117",
+        "text": "Zetaquira - Boyaca"
+    },
+    {
+        "value": "1118",
+        "text": "Zipacon - Cundinamarca"
+    },
+    {
+        "value": "1119",
+        "text": "Zipaquira - Cundinamarca"
+    },
+    {
+        "value": "1120",
+        "text": "Zona Bananera - Magdalena"
+    }
+]
