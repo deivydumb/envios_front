@@ -10,7 +10,7 @@ class="fixed inset-0 z-50 flex items-center justify-center bg-white/30 dark:bg-[
 
 
 
-<form [formGroup]="shipmentForm" (ngSubmit)="onSubmit()" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md space-y-6">
+<form [formGroup]="shipmentForm"  class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md space-y-6">
     <h2 class="text-2xl font-bold text-gray-800">Datos del Envío</h2>
   
     <!-- Sección de Origen -->
@@ -218,7 +218,7 @@ class="fixed inset-0 z-50 flex items-center justify-center bg-white/30 dark:bg-[
     </div>
   
     <div class="flex justify-end mt-6">
-      <button type="submit" [disabled]="shipmentForm.invalid || !shipmentForm.get('costo')?.value" 
+      <button type="submit" (click)="onSubmit()" [disabled]="shipmentForm.invalid || !shipmentForm.get('costo')?.value" 
               class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition disabled:bg-gray-400">
         Enviar
       </button>

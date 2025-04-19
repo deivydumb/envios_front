@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  Output, EventEmitter, OnInit,  ElementRef, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -7,6 +7,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import cities from '../../../assets/data/cities.json';
 import { ShipmentService } from '../../core/services/shipment/shipment.service';
 import { Router } from '@angular/router';
+import { NotificationService } from '../../core/services/notifications/notifications.service';
 
 
 @Component({
@@ -17,6 +18,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./shipment.component.css']
 })
 export class ShipmentComponent implements OnInit {
+
+  @Output() notify = new EventEmitter<void>();
+  @ViewChild('termsModal') termsModal!: ElementRef;
   shipmentForm: FormGroup;
   cities: {value: string, text: string}[] = cities;
   showLoading: boolean = false;
@@ -28,7 +32,8 @@ export class ShipmentComponent implements OnInit {
   showOriginDropdown = false;
   showDestinationDropdown = false;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private readonly shipmentService: ShipmentService, private cd: ChangeDetectorRef, private router: Router) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private readonly shipmentService: ShipmentService, private cd: ChangeDetectorRef, 
+    private router: Router, private notificationService: NotificationService) {
 
     this.shipmentForm = this.fb.group({
       ciudad_origen: ['', Validators.required],
@@ -45,6 +50,7 @@ export class ShipmentComponent implements OnInit {
     this.filteredDestinationCities = [...this.cities];
 
     this.originSearchControl.valueChanges.subscribe(() => this.filterOriginCities());
+  
   }
   updateFormState() {
     this.shipmentForm.updateValueAndValidity();
@@ -151,21 +157,21 @@ export class ShipmentComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log("Formulario de envío", this.shipmentForm);
+    this.showLoading = true;
     if (this.shipmentForm.invalid) {
-      this.shipmentForm.markAllAsTouched(); // Esto forzará que se muestren los errores
+      this.shipmentForm.markAllAsTouched(); 
       return;
     }
     if (this.shipmentForm.valid) {
-      this.shipmentService.createShipment(this.shipmentForm.value).subscribe({
-        next: (response: any) => {
-          console.log("Envío creado con éxito", response);
-          this.showLoading = false;
+      this.shipmentService.createShipment(this.shipmentForm.value).then((response: any) => {
+        console.log("Envío creado con éxito", response);
+        sessionStorage.setItem('bandera', "true");
+        setTimeout(() => {
           this.router.navigate(['/login']);
-        },
-        error: (error: any) => {
-          console.error("Error al crear envío", error);
-        }
+          
+        }, 4000);
+      }).catch((error: any) => {
+        console.error("Error al crear envío", error);
       });
     } else {
       this.shipmentForm.markAllAsTouched();

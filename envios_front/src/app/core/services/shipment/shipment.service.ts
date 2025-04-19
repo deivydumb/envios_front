@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IShipment, ShipmentStatus } from '../../interfaces/shipment';
+import { IShipment, ShipmentStatus,ResponseShipment } from '../../interfaces/shipment';
+import { PackageService } from '../package/package.service';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +11,26 @@ export class ShipmentService {
   
   private apiUrl = 'http://localhost:3000/api/';
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private readonly packageService : PackageService) { }
   
   getShipments() {
     return this.http.get(`${this.apiUrl}shipments`);
   }
 
-  createShipment(shipmentData: any) {
+  async createShipment(shipmentData: any) {
+    const packageShipment  = shipmentData.packages; 
     const transformedShipment = this.transformToShipment(shipmentData);  
     console.log('Envío transformado:', transformedShipment);  
-    return this.http.post(`${this.apiUrl}shipment`, transformedShipment);
+    console.log('Paquete:', packageShipment);
+    const response = this.http.post<ResponseShipment>(`${this.apiUrl}shipment`, transformedShipment);
+    response.subscribe(res => {
+      console.log('Respuesta del servidor:', res);  
+      const idShipment = res.data.id || 0;
+      const data =  firstValueFrom(this.packageService.createPackages(packageShipment, idShipment)); 
+      console.log('Respuesta del servidor al crear paquete:', data);
+      console.log('ID del envío creado:', idShipment);
+    }); 
+    return response;
   }
 
   private transformToShipment(data: any): IShipment {
