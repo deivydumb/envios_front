@@ -1,0 +1,116 @@
+<form *ngIf="shipmentForm" [formGroup]="shipmentForm" class="bg-white p-6 rounded-2xl shadow-md w-full max-w-4xl mx-auto">
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">🚛 Transportista</h3>
+    <div formGroupName="transportista" class="grid md:grid-cols-2 gap-4 mb-6">
+      <input formControlName="nombre" placeholder="Nombre" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input formControlName="identificacion" placeholder="Identificación" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input formControlName="telefono" placeholder="Teléfono" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input formControlName="email" placeholder="Email" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input formControlName="empresa" placeholder="Empresa" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input formControlName="licencia_transporte" placeholder="Licencia de Transporte" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+  
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">🚐 Vehículo</h3>
+    <div formGroupName="vehiculo" class="grid md:grid-cols-2 gap-4 mb-6">
+      <input formControlName="placa" placeholder="Placa" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input formControlName="marca" placeholder="Marca" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input formControlName="modelo" placeholder="Modelo" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      <input formControlName="capacidad" type="number" placeholder="Capacidad (kg)" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+    </div>
+  
+    <h3 class="text-lg font-semibold text-gray-800 mb-4">🗺️ Viaje</h3>
+    <div formGroupName="journey" class="grid md:grid-cols-2 gap-4 mb-6">
+      <div class="flex flex-col">
+        <label class="text-sm text-gray-600 mb-1">Fecha estimada de fin <span class="text-red-500">*</span></label>
+        <input formControlName="fecha_fin_estimada" type="datetime-local" class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <span *ngIf="shipmentForm.get('journey.fecha_fin_estimada')?.invalid && shipmentForm.get('journey.fecha_fin_estimada')?.touched" 
+              class="text-red-500 text-xs mt-1">
+          Fecha estimada es requerida
+        </span>
+      </div>
+      
+      <div class="flex flex-col relative">
+        <label class="text-sm text-gray-600 mb-1">Ciudad origen <span class="text-red-500">*</span></label>
+        <input 
+          [formControl]="originSearchControl"
+          (focus)="handleOriginFocus()"
+          (blur)="handleOriginBlur()"
+          placeholder="Buscar ciudad..."
+          class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 pr-8"
+        />
+        <span *ngIf="shipmentForm.get('journey.origen')?.invalid && shipmentForm.get('journey.origen')?.touched" 
+              class="text-red-500 text-xs mt-1">
+          Ciudad origen es requerida
+        </span>
+        
+        <span 
+          class="absolute right-3 top-9 transform -translate-y-1/2 cursor-pointer"
+          (click)="toggleOriginDropdown()"
+        >
+          ▼
+        </span>
+      
+        <div 
+          class="absolute z-50 w-full mt-1 bg-white rounded-lg shadow-lg max-h-60 overflow-y-auto border top-full"
+          *ngIf="showOriginDropdown"
+        >
+          <div 
+            *ngFor="let city of filteredOriginCities"
+            class="p-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
+            (click)="selectOriginCity(city)"
+            [class.bg-blue-50]="shipmentForm.get('journey.origen')?.value === city.value"
+          >
+            <span>{{ city.text }}</span>
+            <span *ngIf="shipmentForm.get('journey.origen')?.value === city.value" class="text-blue-500">✓</span>
+          </div>
+      
+          <div *ngIf="filteredOriginCities.length === 0" class="p-2 text-sm text-gray-500">
+            No se encontraron ciudades
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex flex-col relative">
+        <label class="text-sm text-gray-600 mb-1">Ciudad destino <span class="text-red-500">*</span></label>
+        <input 
+          [formControl]="destinationSearchControl"
+          (focus)="handleDestinationFocus()"
+          (blur)="handleDestinationBlur()"
+          class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 pr-8"
+          placeholder="Buscar ciudad..."
+        />
+        <span *ngIf="shipmentForm.get('journey.destino')?.invalid && shipmentForm.get('journey.destino')?.touched" 
+              class="text-red-500 text-xs mt-1">
+          Ciudad destino es requerida
+        </span>
+        <span 
+          class="absolute right-3 top-9 transform -translate-y-1/2 cursor-pointer"
+          (click)="toggleDestinationDropdown()"
+        >
+          ▼
+        </span>
+        
+        <div 
+          class="absolute z-50 w-full mt-1 bg-white rounded-lg shadow-lg max-h-60 overflow-y-auto border top-full"
+          *ngIf="showDestinationDropdown"
+        >
+          <div 
+            *ngFor="let city of filteredDestinationCities"
+            class="p-2 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
+            (click)="selectDestinationCity(city)"
+            [class.bg-blue-50]="shipmentForm.get('journey.destino')?.value === city.value"
+          >
+            <span>{{city.text}}</span>
+            <span *ngIf="shipmentForm.get('journey.destino')?.value === city.value" class="text-blue-500">✓</span>
+          </div>
+          
+          <div *ngIf="filteredDestinationCities.length === 0" class="p-2 text-sm text-gray-500">
+            No se encontraron ciudades
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all w-full md:w-auto">
+      Crear Todo
+    </button>
+  </form>
