@@ -16,3 +16,9 @@ export interface IPackage {
     status: number,
     message: string,
   }
+  export interface ResponsePackageData {
+    map(arg0: (p: any) => any): any[];
+    data: IPackage[],
+    status: number,
+    message: string,
+  }

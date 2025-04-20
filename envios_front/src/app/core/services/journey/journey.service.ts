@@ -4,7 +4,7 @@ import { VehicleService } from '../vehicle/vehicle.service';
 import { ConveyorService } from '../conveyor/conveyor.service';
 import { catchError, switchMap } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
-import { ResponseJourney } from '../../interfaces/journey';
+import { ResponseJourney, ResponseJourneyData } from '../../interfaces/journey';
 import { IVehicle, ResponseVehicle } from '../../interfaces/vehicle';
 import { IConveyor, ReponseConveyor } from '../../interfaces/conveyor';
 
@@ -20,6 +20,16 @@ export class JourneyService {
     private conveyorService: ConveyorService
   ) {}
 
+
+   getJourneyAll(): Observable<ResponseJourneyData> {
+
+     return this.http.get<ResponseJourneyData>(`${this.apiUrl}journey`).pipe(
+       catchError(error => {
+         console.error('Error fetching journeys:', error);
+         return throwError(() => new Error('Failed to fetch journeys'));
+       })
+     );
+   }
   createCompleteJourney(journeyData: any): Observable<ResponseJourney> {
     return this.createVehicle(journeyData.vehiculo).pipe(
       switchMap(vehicleResponse =>

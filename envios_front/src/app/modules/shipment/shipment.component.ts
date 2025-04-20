@@ -164,11 +164,9 @@ export class ShipmentComponent implements OnInit {
     }
     if (this.shipmentForm.valid) {
       this.shipmentService.createShipment(this.shipmentForm.value).then((response: any) => {
-        console.log("Envío creado con éxito", response);
         sessionStorage.setItem('bandera', "true");
         setTimeout(() => {
           this.router.navigate(['/login']);
-          
         }, 4000);
       }).catch((error: any) => {
         console.error("Error al crear envío", error);
@@ -218,12 +216,6 @@ export class ShipmentComponent implements OnInit {
     }
   
     this.shipmentForm.get('costo')?.setValue(baseCost, {emitEvent: false});
-    console.log('Costo calculado:', {
-      base: baseCost,
-      weight: totalWeight,
-      volume: totalVolume,
-      units: totalUnits
-    });
     this.updateFormState();
   }
 }

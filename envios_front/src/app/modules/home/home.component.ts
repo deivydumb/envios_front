@@ -6,18 +6,22 @@ import { UserService } from '../../core/services/user/user.service';
 import { ShipmentComponent } from "../shipment/shipment.component";
 import { NgIf } from '@angular/common';
 import { NotificationService } from '../../core/services/notifications/notifications.service';
+import { PackageStatusComponent } from "../package-status/package-status.component";
+import { RecordComponent } from "../record/record.component";
 
 
 @Component({
   standalone: true,
   selector: 'app-home',
   templateUrl: './home.component.html',
-  imports: [HeaderComponent, FooterComponent, ShipmentComponent, NgIf]
+  imports: [HeaderComponent, FooterComponent, ShipmentComponent, NgIf, PackageStatusComponent, RecordComponent]
 })
 export class HomeComponent implements OnInit {
   username: string | undefined; 
   showShipment = false;
   showToast = false;
+  showPackageStatus = false;
+  showRecords = false;
   toastMessage = "creado con exito el envio";
   toastType = 'success';
   private timer: any;
@@ -65,11 +69,16 @@ export class HomeComponent implements OnInit {
       }, 5000);
     }
   }
+  showStatus(){
+    this.showPackageStatus = true;
+  }
 
   toggleShipment(): void {
     this.showShipment =true;
   }
 
-
+  toggleRecords(): void {
+    this.showRecords = true;
+  }
  
 }

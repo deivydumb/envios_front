@@ -3,9 +3,24 @@
     <app-header></app-header>
     
     <main class="flex-1" >
-    <div *ngIf="!showjourney">
+    <div *ngIf="!showjourney && !showPackage && !showReports">
+      <div *ngIf="showToast" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800" role="alert">
+        <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+          <!-- Icono de éxito -->
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+          </svg>
+        </div>
 
-
+      </div>
+      <div *ngIf="showToastUpdate" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800" role="alert">
+        <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-yellow-500 bg-yellow-100 rounded-lg dark:bg-yellow-800 dark:text-yellow-200">
+          …
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+          </svg>
+        </div>
+      </div>
     <div class="text-center mb-8">
         <img class="w-60 h-auto mb-6 mx-auto" src="../../../assets/images/image.png" alt="Logo de Coordinadora">
         <h1 class="text-3xl font-bold text-gray-800 mb-2">Bienvenido {{ this.username }}</h1>
@@ -48,7 +63,7 @@
           </div>
           <p class="text-gray-600 mb-4">Gestiona, edita y monitoriza las rutas existentes.</p>
           <button 
-            (click)="navigateTo()" 
+            (click)="navegationForPackage()" 
             class="w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -69,7 +84,7 @@
           </div>
           <p class="text-gray-600 mb-4">Analiza el desempeño de las rutas y genera reportes.</p>
           <button 
-            (click)="navigateTo()" 
+            (click)="navigateToReports()" 
             class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center justify-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -82,6 +97,12 @@
     <div *ngIf="showjourney">
         <app-journey (element)="handleElement()"></app-journey>
     </div>
+    <div *ngIf="showPackage">
+    <app-package-assigment (update)="handleElementUpdate()"></app-package-assigment>
+  </div>
+  <div *ngIf="showReports">
+    <app-reports></app-reports>
+  </div>
 </main>
 <app-footer></app-footer>
 </div>

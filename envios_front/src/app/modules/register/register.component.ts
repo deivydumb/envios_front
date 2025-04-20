@@ -31,9 +31,6 @@ constructor(private fb: FormBuilder,private router: Router ,private userService:
 }
 
 ngOnInit(){
-  this.userService.getUserByEmail("tets@test.com").subscribe(users => {
-    console.log(users);
-  });
 }
 
 createForm(){
