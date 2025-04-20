@@ -27,4 +27,11 @@ export class HomeAdminComponent {
   navigateTo(): void {
     this.showjourney = true;
   }
+
+
+  handleElement(){
+    console.log("EMIT")
+    this.showjourney= false
+  }
 }
+

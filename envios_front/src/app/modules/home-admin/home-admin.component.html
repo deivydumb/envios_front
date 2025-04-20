@@ -80,7 +80,7 @@
       </div>
     </div>
     <div *ngIf="showjourney">
-        <app-journey></app-journey>
+        <app-journey (element)="handleElement()"></app-journey>
     </div>
 </main>
 <app-footer></app-footer>

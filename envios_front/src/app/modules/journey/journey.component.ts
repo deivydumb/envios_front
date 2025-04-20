@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators,FormArray } from '@angular/forms';
 import cities from '../../../assets/data/cities.json';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { JourneyService } from '../../core/services/journey/journey.service';
 
 @Component({
   selector: 'app-journey',
@@ -15,8 +16,9 @@ import { Router } from '@angular/router';
 export class JourneyComponent implements OnInit {
   @Output() notify = new EventEmitter<void>();
   @ViewChild('termsModal') termsModal!: ElementRef;
-  
-  shipmentForm: FormGroup;
+  @Output() element = new EventEmitter<void>();
+
+  journeyForm: FormGroup;
   cities: {value: string, text: string}[] = cities;
   showLoading: boolean = false;
   
@@ -32,29 +34,31 @@ export class JourneyComponent implements OnInit {
     private fb: FormBuilder, 
     private http: HttpClient, 
     private cd: ChangeDetectorRef,
-    private router: Router
+    private router: Router,
+    private journeyService: JourneyService
   ) {
-    this.shipmentForm = this.fb.group({
+    this.journeyForm = this.fb.group({
       transportista: this.fb.group({
-        nombre: ['', Validators.required],
-        identificacion: ['', Validators.required],
-        telefono: ['', Validators.required],
+        nombre: ['', [Validators.required, Validators.minLength(3)]],
+        identificacion: ['', [Validators.required, Validators.pattern(/^[0-9]{10,13}$/)]],
+        telefono: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
         email: ['', [Validators.required, Validators.email]],
         empresa: ['', Validators.required],
-        licencia_transporte: ['', Validators.required]
+        licencia_transporte: ['', [Validators.required, Validators.minLength(5)]]
       }),
       vehiculo: this.fb.group({
-        placa: ['', Validators.required],
+        placa: ['', [Validators.required, Validators.pattern(/^[A-Z]{3}-[0-9]{3,4}$/)]],
         marca: ['', Validators.required],
         modelo: ['', Validators.required],
-        capacidad: ['', [Validators.required, Validators.min(1)]]
+        capacidad: ['', [Validators.required, Validators.min(100), Validators.max(50000)]]
       }),
-      journey: this.fb.group({
+      envio: this.fb.group({
         fecha_fin_estimada: ['', Validators.required],
         origen: ['', Validators.required],
         destino: ['', Validators.required]
       })
     });
+  
 
     this.filteredOriginCities = [...this.cities];
     this.filteredDestinationCities = [...this.cities];
@@ -66,7 +70,7 @@ export class JourneyComponent implements OnInit {
   }
 
   updateFormState() {
-    this.shipmentForm.updateValueAndValidity();
+    this.journeyForm.updateValueAndValidity();
     this.cd.detectChanges();
   }
 
@@ -78,7 +82,7 @@ export class JourneyComponent implements OnInit {
   }
 
   selectOriginCity(city: {value: string, text: string}) {
-    this.shipmentForm.get('journey.origen')?.setValue(city.value);
+    this.journeyForm.get('envio.origen')?.setValue(city.value);
     this.originSearchControl.setValue(city.text);
     this.showOriginDropdown = false;
   }
@@ -98,9 +102,9 @@ export class JourneyComponent implements OnInit {
   handleOriginBlur() {
     setTimeout(() => {
       this.showOriginDropdown = false;
-      const originValue = this.shipmentForm.get('journey.origen')?.value;
+      const originValue = this.journeyForm.get('envio.origen')?.value;
       if (originValue && !this.cities.some(c => c.value === originValue)) {
-        this.shipmentForm.get('journey.origen')?.setValue('');
+        this.journeyForm.get('envio.origen')?.setValue('');
         this.originSearchControl.setValue('');
       }
     }, 200);
@@ -114,7 +118,7 @@ export class JourneyComponent implements OnInit {
   }
 
   selectDestinationCity(city: {value: string, text: string}) {
-    this.shipmentForm.get('journey.destino')?.setValue(city.value);
+    this.journeyForm.get('envio.destino')?.setValue(city.value);
     this.destinationSearchControl.setValue(city.text);
     this.showDestinationDropdown = false;
   }
@@ -134,11 +138,73 @@ export class JourneyComponent implements OnInit {
   handleDestinationBlur() {
     setTimeout(() => {
       this.showDestinationDropdown = false;
-      const destinationValue = this.shipmentForm.get('journey.destino')?.value;
+      const destinationValue = this.journeyForm.get('envio.destino')?.value;
       if (destinationValue && !this.cities.some(c => c.value === destinationValue)) {
-        this.shipmentForm.get('journey.destino')?.setValue('');
+        this.journeyForm.get('envio.destino')?.setValue('');
         this.destinationSearchControl.setValue('');
       }
     }, 200);
+  }
+  private getCityName(cityValue: string): string {
+    const city = this.cities.find(c => c.value === cityValue);
+    return city ? city.text : '';
+  }
+
+  private markAllAsTouched(formGroup: FormGroup | FormGroup[]) {
+    const groups = Array.isArray(formGroup) ? formGroup : [formGroup];
+    
+    groups.forEach(group => {
+      Object.values(group.controls).forEach(control => {
+        if (control instanceof FormControl) {
+          control.markAsTouched({ onlySelf: true });
+        } else if (control instanceof FormGroup) {
+          this.markAllAsTouched(control);
+        } else if (control instanceof FormArray) {
+          control.controls.forEach(subGroup => {
+            if (subGroup instanceof FormGroup) {
+              this.markAllAsTouched(subGroup);
+            }
+          });
+        }
+      });
+    });
+  }
+
+  onSubmit() {
+    this.showLoading = true
+    this.markAllAsTouched(this.journeyForm);
+    console.log(this.journeyForm.value);
+    if (this.journeyForm.valid) {
+      const formData = {
+        transportista: this.journeyForm.value.transportista,
+        vehiculo: this.journeyForm.value.vehiculo,
+        envio: {
+          ...this.journeyForm.value.envio,
+          origen_nombre: this.getCityName(this.journeyForm.value.envio.origen),
+          destino_nombre: this.getCityName(this.journeyForm.value.envio.destino)
+        }
+      };
+
+      this.journeyService.createCompleteJourney(formData).subscribe({
+        next: (response) => {
+          this.journeyForm.reset();
+          setTimeout(() => {
+            sessionStorage.setItem('bandera', "true");
+            this.element.emit()
+            console.log("Hecho", response);
+            this.showLoading = false;
+          }, 3000);
+        }, 
+        error: (error) => {
+          console.error('Error al enviar el formulario:', error);
+        }
+      });
+    } else {
+      console.log('Formulario inválido, corrija los errores');
+    }
+    setTimeout(() => {
+
+    this.element.emit();
+    }, 5000);
   }
 }
