@@ -11,7 +11,7 @@ export class AuthService {
   private publicEndpoints = [
     `${this.apiUrl}/login`,
     `${this.apiUrl}/users/email/`,
-    `${this.apiUrl}/users` // POST para creación de usuario
+    `${this.apiUrl}/users`
   ];
 
   constructor(private http: HttpClient, private router: Router) {}

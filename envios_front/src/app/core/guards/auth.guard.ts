@@ -13,7 +13,6 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    // Verificar si el usuario está intentando acceder a una ruta que no sea login ni registro
     if (state.url === '/user' || state.url === '/register') {
       return true; // No protegemos estas rutas
     }
