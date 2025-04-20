@@ -21,3 +21,9 @@ export enum JourneyStatus {
         status: number,
         message: string,
     }
+
+    export interface ResponseJourneyData{
+      data: IJourney[],
+      status: number,
+      message: string,
+  }

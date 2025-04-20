@@ -168,7 +168,6 @@ export class ShipmentComponent implements OnInit {
         sessionStorage.setItem('bandera', "true");
         setTimeout(() => {
           this.router.navigate(['/login']);
-          
         }, 4000);
       }).catch((error: any) => {
         console.error("Error al crear envío", error);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FooterComponent } from "../home/components/footer/footer.component";
 import { HeaderComponent } from "../home/components/header/header.component";
 import { Router } from '@angular/router';
@@ -17,7 +17,8 @@ import { ReportsComponent } from "../reports/reports.component";
 
 
 
-export class HomeAdminComponent {
+export class HomeAdminComponent implements OnInit {
+  private timer: any
 
   constructor(private router: Router) {}
   username: string = 'Administrador';
@@ -25,6 +26,12 @@ export class HomeAdminComponent {
   showjourney = false;
   showPackage = false
   showReports = false
+  showToast = false
+  showToastUpdate = false
+
+  ngOnInit(): void {
+  this.checkFlag();
+  }
 
   navegationForJourney(){
     this.showjourney = true;
@@ -43,6 +50,30 @@ export class HomeAdminComponent {
   handleElement(){
     console.log("EMIT")
     this.showjourney= false
+  }
+
+  handleElementUpdate(){
+    console.log("EMIT")
+    this.showPackage= false
+  }
+  checkFlag() {
+    const flag = sessionStorage.getItem('bandera');
+    this.showToast = flag === 'true';
+    this.showToastUpdate = flag === 'false';
+    
+    
+    if (this.showToast) {
+      this.timer = setTimeout(() => {
+        this.showToast = false;
+        sessionStorage.removeItem('bandera');
+      }, 5000);
+    }
+    if (this.showToastUpdate) {
+      this.timer = setTimeout(() => {
+        this.showToastUpdate = false;
+        sessionStorage.removeItem('bandera');
+      }, 5000);
+    }
   }
 }
 
