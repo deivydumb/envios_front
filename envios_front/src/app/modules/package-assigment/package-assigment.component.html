@@ -1,0 +1,137 @@
+<div  class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md space-y-6">
+  <!-- Selector de rutas con margen inferior -->
+  <div class="mb-6">
+    <div class="relative w-full">
+      <select 
+        id="ruta-select"
+        [(ngModel)]="rutaSeleccionada"
+        (change)="onRutaChange()"
+        class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
+        [disabled]="cargandoRutas">
+        <option [ngValue]="null">Seleccionar ruta...</option>
+        <option *ngFor="let ruta of rutasDisponibles" [ngValue]="ruta">
+          {{ ruta.origen }} → {{ ruta.destino }}
+          <span *ngIf="ruta.vehiculo" class="text-gray-500">• {{ ruta.vehiculo }}</span>
+        </option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+        <i *ngIf="cargandoRutas" class="fas fa-spinner fa-spin"></i>
+        <svg *ngIf="!cargandoRutas" class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Mensajes de estado con margen superior reducido -->
+    <div *ngIf="cargandoRutas" class="mt-2 text-sm text-blue-600">
+      <i class="fas fa-spinner fa-spin mr-1"></i> Cargando rutas disponibles...
+    </div>
+    <div *ngIf="errorCarga" class="mt-2 text-sm text-red-600">
+      <i class="fas fa-exclamation-triangle mr-1"></i> Error al cargar rutas. Intente nuevamente.
+    </div>
+  </div>
+
+  <!-- Tabla de paquetes con sombra más sutil -->
+  <div class="bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-10">
+              <input 
+                type="checkbox" 
+                [(ngModel)]="todosSeleccionados"
+                (change)="toggleSeleccionTodos()"
+                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+            </th>
+            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              N° Guía
+            </th>
+            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Destinatario
+            </th>
+            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Dirección
+            </th>
+            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Peso (kg)
+            </th>
+            <th scope="col" class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Volumen (m³)
+            </th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <!-- Mensaje de carga -->
+          <tr *ngIf="cargando">
+            <td colspan="6" class="px-4 py-6 text-center">
+              <div class="flex justify-center items-center space-x-2">
+                <i class="fas fa-spinner fa-spin text-blue-500"></i>
+                <span class="text-gray-600">Cargando paquetes...</span>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Mensaje cuando no hay paquetes -->
+          <tr *ngIf="!cargando && paquetes.length === 0">
+            <td colspan="6" class="px-4 py-6 text-center text-gray-500">
+              <div class="flex justify-center items-center space-x-2">
+                <i class="fas fa-box-open text-gray-400"></i>
+                <span>No se encontraron paquetes en espera</span>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Paquetes -->
+          <tr 
+            *ngFor="let paquete of paquetes" 
+            class="hover:bg-gray-50 transition-colors duration-150"
+            [ngClass]="{'bg-blue-50': estaSeleccionado(paquete.guia)}">
+            <td class="px-4 py-4 whitespace-nowrap">
+              <input 
+                type="checkbox" 
+                [(ngModel)]="paquete.seleccionado"
+                (change)="actualizarSeleccion(paquete)"
+                class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+            </td>
+            <td class="px-4 py-4 whitespace-nowrap">
+              <div class="text-sm font-medium text-gray-900">{{ paquete.guia }}</div>
+              <div class="text-xs text-gray-500">{{ paquete.fecha | date:'dd/MM/yyyy' }}</div>
+            </td>
+            <td class="px-4 py-4 whitespace-nowrap">
+              <div class="text-sm font-medium text-gray-900">{{ paquete.origen.nombre }}</div>
+              <div class="text-xs text-gray-500">{{ paquete.origen.direccion || 'N/A' }}</div>
+            </td>
+            <td class="px-4 py-4">
+              <div class="text-sm text-gray-900">{{ paquete.destino.nombre }}</div>
+              <div class="text-xs text-gray-500">{{ paquete.destino.direccion || 'N/A' }}</div>
+            </td>
+            <td class="px-4 py-4">
+              <div class="text-sm text-gray-900">{{ paquete.peso }}</div>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Resumen de selección con mejor espaciado -->
+  <div *ngIf="paquetesSeleccionados.length > 0" class="bg-blue-50 border border-blue-200 rounded-lg p-4 shadow-sm">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-3 sm:space-y-0">
+      <div>
+        <h3 class="text-sm font-medium text-blue-800">Paquetes seleccionados para asignación</h3>
+        <p class="text-xs text-blue-600 mt-1">
+          {{ paquetesSeleccionados.length }} paquete(s) seleccionado(s) • Ruta: 
+          <span class="font-semibold">{{ rutaSeleccionada?.origen }} → {{ rutaSeleccionada?.destino }}</span>
+        </p>
+      </div>
+      <button 
+      (click)="asignarPaquetes()"
+        [disabled]="!rutaSeleccionada"
+        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+        <i class="fas fa-truck mr-2"></i> Asignar a ruta
+      </button>
+    </div>
+  </div>
+</div>
