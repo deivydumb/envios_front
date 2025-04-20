@@ -3,29 +3,37 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { UserService } from '../../core/services/user/user.service';
+import { ShipmentComponent } from "../shipment/shipment.component";
+import { NgIf } from '@angular/common';
+import { NotificationService } from '../../core/services/notifications/notifications.service';
+
 
 @Component({
   standalone: true,
   selector: 'app-home',
   templateUrl: './home.component.html',
-  imports: [HeaderComponent, FooterComponent]
+  imports: [HeaderComponent, FooterComponent, ShipmentComponent, NgIf]
 })
 export class HomeComponent implements OnInit {
-  username: string | undefined; // Variable para almacenar el nombre del usuario
+  username: string | undefined; 
+  showShipment = false;
+  showToast = false;
+  toastMessage = "creado con exito el envio";
+  toastType = 'success';
+  private timer: any;
 
   constructor(private router: Router, private userService: UserService) {}
 
   ngOnInit(): void {
+   this.checkFlag();
     const token = sessionStorage.getItem('token');
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1]));
 
-      // Extraemos el nombre del usuario (puedes ajustarlo según tu payload)
-      this.username = payload.username || 'Usuario desconocido'; // Ajusta 'username' según el nombre de la propiedad en tu token
-      console.log(payload);
+      this.username = payload.username || 'Usuario desconocido';
       this.userService.getUserByEmail(payload.email).subscribe(user => {
         if (user && user.data) {
-          this.username = user.data.nombre; // Ajusta 'name' según la propiedad que contenga el nombre del usuario
+          this.username = user.data.nombre; 
         } else {
           this.username = 'Usuario desconocido';
         }
@@ -34,7 +42,6 @@ export class HomeComponent implements OnInit {
         this.username = 'Usuario desconocido';
       });
 
-      // Verificamos si el token está expirado
       const isExpired = Date.now() >= payload.exp * 1000;
       
       if (isExpired) {
@@ -43,4 +50,26 @@ export class HomeComponent implements OnInit {
       }
     }
   }
+  
+  checkFlag() {
+    const flag = sessionStorage.getItem('bandera');
+    console.log('Valor de la bandera:', flag);
+    // Convertir a booleano (considerando 'true' como string)
+    this.showToast = flag === 'true';
+    
+    // Si la bandera está activa, programar desactivación
+    if (this.showToast) {
+      this.timer = setTimeout(() => {
+        this.showToast = false;
+        sessionStorage.removeItem('bandera'); // Opcional: eliminar el valor
+      }, 5000);
+    }
+  }
+
+  toggleShipment(): void {
+    this.showShipment =true;
+  }
+
+
+ 
 }

@@ -1,0 +1,87 @@
+
+  <div  class="flex flex-col min-h-screen">
+    <app-header></app-header>
+    
+    <main class="flex-1" >
+    <div *ngIf="!showjourney">
+
+
+    <div class="text-center mb-8">
+        <img class="w-60 h-auto mb-6 mx-auto" src="../../../assets/images/image.png" alt="Logo de Coordinadora">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Bienvenido {{ this.username }}</h1>
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Panel de Administración de Rutas</h2>
+        <p class="text-gray-600">Selecciona una opción para continuar</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Tarjeta 1: Crear Rutas -->
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition transform hover:-translate-y-1">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-semibold text-blue-700">Crear Nueva Ruta</h2>
+          </div>
+          <p class="text-gray-600 mb-4">Diseña nuevas rutas de distribución para optimizar los envíos.</p>
+          <button 
+            (click)="navigateTo()" 
+            class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+            </svg>
+            Crear Ruta
+          </button>
+        </div>
+      
+        <!-- Tarjeta 2: Administrar Rutas -->
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition transform hover:-translate-y-1">
+          <div class="flex items-center mb-4">
+            <div class="bg-purple-100 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-semibold text-purple-700">Administrar Rutas</h2>
+          </div>
+          <p class="text-gray-600 mb-4">Gestiona, edita y monitoriza las rutas existentes.</p>
+          <button 
+            (click)="navigateTo()" 
+            class="w-full bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            Administrar
+          </button>
+        </div>
+      
+        <!-- Tarjeta 3: Estadísticas (Opcional) -->
+        <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition transform hover:-translate-y-1">
+          <div class="flex items-center mb-4">
+            <div class="bg-green-100 p-3 rounded-full mr-4">
+              <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-semibold text-green-700">Reportes y Estadísticas</h2>
+          </div>
+          <p class="text-gray-600 mb-4">Analiza el desempeño de las rutas y genera reportes.</p>
+          <button 
+            (click)="navigateTo()" 
+            class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Ver Reportes
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showjourney">
+        <app-journey (element)="handleElement()"></app-journey>
+    </div>
+</main>
+<app-footer></app-footer>
+</div>

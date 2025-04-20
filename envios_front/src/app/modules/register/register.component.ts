@@ -57,17 +57,12 @@ passwordMatchValidator(form: FormGroup) {
 
 onSubmit() {
   this.showLoading = true;
-
   if (this.registerForm.invalid) {
     this.markFormGroupTouched(this.registerForm);
     this.showLoading = false;
     return;
   }
-
   const userData = this.registerForm.value;
-  console.log('Form Submitted!', userData);
-
-  // 1) Intentamos obtener el usuario por email
   this.userService.getUserByEmail(userData.email).subscribe({
     next: user => {
       alert('El usuario ya está registrado');
@@ -78,7 +73,7 @@ onSubmit() {
         this.userService.creationUser(userData).subscribe({
           next: (res: any) => {
             setTimeout(() => {
-              this.showLoading = false;
+              sessionStorage.setItem('bandera', "true");
               this.router.navigate(['/login']);
             }, 3000);
           },

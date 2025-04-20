@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AuthService } from '../../core/auth/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../core/services/user/user.service';
 
 @Component({
   standalone: true,
@@ -17,11 +18,12 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent {
   loginForm!: FormGroup;
   errorMessage: string = '';
-
+  rol = '';
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -38,14 +40,30 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
+  
     const { email, password } = this.loginForm.value;
     console.log("Formulario", email, password);
-
+    this.userService.getUserByEmail(email).subscribe({
+      next: (response) => {
+         console.log("Usuario encontrado", response.data);
+         this.rol = response.data.rol;
+      },
+      error: (err) => {
+        console.error(err);
+        this.errorMessage = 'Error al verificar el usuario';
+      }
+    });
     this.authService.login(email, password).subscribe({
       next: (response) => {
         if (response.token) {
           sessionStorage.setItem('token', response.token);
-          this.router.navigate(['/home']);
+          if (this.rol === 'admin') {
+            this.router.navigate(['/homeAdmin']);
+
+          }else{
+            this.router.navigate(['/home']);
+          }
+          
         }
       },
       error: (err) => {
