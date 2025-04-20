@@ -1,0 +1,112 @@
+<div class="container mx-auto px-4 py-6 max-w-3xl">
+    <!-- Resultado del rastreo -->
+    <section class="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+      <!-- Encabezado del paquete -->
+      <div class="bg-blue-600 text-white p-3">
+        <div class="flex justify-between items-center">
+          <div>
+            <h2 class="text-lg font-bold">ENV-78945</h2>
+            <p class="text-blue-100 text-sm">Importadora López</p>
+          </div>
+          <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium">
+            ENTREGADO
+          </span>
+        </div>
+      </div>
+  
+      <!-- Detalles del paquete -->
+      <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <h3 class="font-medium text-gray-900 text-sm mb-2">Información del envío</h3>
+          <div class="space-y-1 text-sm">
+            <p><span class="text-gray-600">Fecha envío:</span> 15/04/2023</p>
+            <p><span class="text-gray-600">Fecha entrega:</span> 18/04/2023</p>
+            <p><span class="text-gray-600">Tipo:</span> Estándar (2-3 días)</p>
+            <p><span class="text-gray-600">Peso:</span> 3.5 kg</p>
+            <p><span class="text-gray-600">Dimensiones:</span> 25x15x10 cm</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-medium text-gray-900 text-sm mb-2">Destinatario</h3>
+          <div class="space-y-1 text-sm">
+            <p><span class="text-gray-600">Nombre:</span> Juan Pérez</p>
+            <p><span class="text-gray-600">Dirección:</span> Av. Principal #123, Col. Centro</p>
+            <p><span class="text-gray-600">Ciudad:</span> Monterrey, NL</p>
+            <p><span class="text-gray-600">Teléfono:</span> 81 1234 5678</p>
+            <p><span class="text-gray-600">Notas:</span> Entregar en recepción</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Historial de rastreo -->
+      <div class="border-t border-gray-200 p-4">
+        <h3 class="font-medium text-gray-900 text-sm mb-3">Historial de rastreo</h3>
+        
+        <div class="relative">
+          <!-- Línea de tiempo -->
+          <div class="absolute left-3 top-0 h-full w-0.5 bg-blue-200"></div>
+          
+          <!-- Eventos -->
+          <div class="relative pl-8 pb-4">
+            <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs">
+              <i class="fas fa-check"></i>
+            </div>
+            <div class="bg-green-50 p-3 rounded-lg">
+              <p class="font-medium text-green-800 text-sm">Entregado al destinatario</p>
+              <p class="text-xs text-gray-600">18/04/2023 - 14:23</p>
+              <p class="text-xs mt-1">Recibido por: Recepción</p>
+            </div>
+          </div>
+          
+          <div class="relative pl-8 pb-4">
+            <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center text-white text-xs">
+              <i class="fas fa-truck"></i>
+            </div>
+            <div class="bg-blue-50 p-3 rounded-lg">
+              <p class="font-medium text-blue-800 text-sm">En reparto</p>
+              <p class="text-xs text-gray-600">18/04/2023 - 09:15</p>
+              <p class="text-xs mt-1">Repartidor: Carlos Martínez (Unidad #45)</p>
+            </div>
+          </div>
+          
+          <div class="relative pl-8 pb-4">
+            <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center text-white text-xs">
+              <i class="fas fa-warehouse"></i>
+            </div>
+            <div class="bg-blue-50 p-3 rounded-lg">
+              <p class="font-medium text-blue-800 text-sm">En centro de distribución</p>
+              <p class="text-xs text-gray-600">17/04/2023 - 18:30</p>
+              <p class="text-xs mt-1">Centro Monterrey Norte</p>
+            </div>
+          </div>
+          
+          <div class="relative pl-8">
+            <div class="absolute left-0 top-0 w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center text-white text-xs">
+              <i class="fas fa-box"></i>
+            </div>
+            <div class="bg-blue-50 p-3 rounded-lg">
+              <p class="font-medium text-blue-800 text-sm">Recibido en centro logístico</p>
+              <p class="text-xs text-gray-600">15/04/2023 - 15:45</p>
+              <p class="text-xs mt-1">Centro CDMX Sur</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Acciones adicionales -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+      <button class="bg-white p-3 rounded-lg shadow-sm text-center hover:bg-gray-50 transition-colors">
+        <i class="fas fa-file-invoice text-blue-600 text-xl mb-1"></i>
+        <p class="font-medium text-sm">Comprobante</p>
+      </button>
+      <button class="bg-white p-3 rounded-lg shadow-sm text-center hover:bg-gray-50 transition-colors">
+        <i class="fas fa-headset text-blue-600 text-xl mb-1"></i>
+        <p class="font-medium text-sm">Soporte</p>
+      </button>
+      <button class="bg-white p-3 rounded-lg shadow-sm text-center hover:bg-gray-50 transition-colors">
+        <i class="fas fa-truck-ramp-box text-blue-600 text-xl mb-1"></i>
+        <p class="font-medium text-sm">Nuevo envío</p>
+      </button>
+    </div>
+  </div>
