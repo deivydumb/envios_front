@@ -45,7 +45,6 @@ export class LoginComponent {
     console.log("Formulario", email, password);
     this.userService.getUserByEmail(email).subscribe({
       next: (response) => {
-         console.log("Usuario encontrado", response.data);
          this.rol = response.data.rol;
       },
       error: (err) => {

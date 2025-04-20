@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -7,58 +7,82 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-
-  private apiUrl = 'http://localhost:3000/api'; // Cambia esto por la URL de tu API
+  private apiUrl = 'http://localhost:3000/api';
+  private publicEndpoints = [
+    `${this.apiUrl}/login`,
+    `${this.apiUrl}/users/email/`,
+    `${this.apiUrl}/users` // POST para creación de usuario
+  ];
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  // Método para verificar si una URL es pública
+  isPublicUrl(url: string): boolean {
+    return this.publicEndpoints.some(endpoint => {
+      if (endpoint.endsWith('/')) {
+        return url.includes(endpoint);
+      }
+      return url === endpoint;
+    });
+  }
+
   login(email: string, password: string): Observable<any> {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/login`, { email, password }).pipe(
-      tap((response: { token: string; }) => {
-        if (typeof window !== 'undefined') {
-          sessionStorage.setItem('token', response.token);
+    return this.http.post(`${this.apiUrl}/login`, { email, password }).pipe(
+      tap((response: any) => {
+        if (response.token) {
+          this.storeToken(response.token);
         }
       })
     );
   }
-  
+
+  checkEmail(email: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/users/email/${email}`);
+  }
+
+  register(userData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/users`, userData);
+  }
+
+  private storeToken(token: string): void {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('token', token);
+    }
+  }
+
+  getToken(): string | null {
+    return sessionStorage.getItem('token');
+  }
+
+  logout(): void {
+    sessionStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
 
   checkTokenValidity(): boolean {
-    const token = sessionStorage.getItem('token');
+    const token = this.getToken();
     
-    if (!token) {
-      return false; // No hay token
-    }
+    if (!token) return false;
 
     try {
-      // Verificamos si el token es válido
       const decodedToken = this.decodeToken(token);
-      const expirationTime = decodedToken.exp * 1000; // Convertimos el tiempo de expiración a milisegundos
+      const expirationTime = decodedToken.exp * 1000;
 
       if (Date.now() > expirationTime) {
-        // Si el token ha expirado, lo eliminamos y redirigimos al login
-        sessionStorage.removeItem('token');
-        this.router.navigate(['/login']);
+        this.logout();
         return false;
       }
 
       return true;
     } catch (e) {
-      // Si el token no es válido, lo eliminamos y redirigimos al login
-      sessionStorage.removeItem('token');
-      this.router.navigate(['/login']);
+      this.logout();
       return false;
     }
   }
 
   private decodeToken(token: string): any {
-    // Decodifica el JWT para obtener sus datos
     const parts = token.split('.');
-    if (parts.length !== 3) {
-      throw new Error('Token inválido');
-    }
-
-    const decoded = atob(parts[1]);
-    return JSON.parse(decoded);
+    if (parts.length !== 3) throw new Error('Token inválido');
+    return JSON.parse(atob(parts[1]));
   }
 }

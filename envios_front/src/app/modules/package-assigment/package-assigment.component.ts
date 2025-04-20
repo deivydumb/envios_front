@@ -41,7 +41,6 @@ export class PackageAssigmentComponent {
       next: (rutas) => {
         this.rutasDisponibles = rutas.data;
         this.cargandoRutas = false;
-        console.log('Rutas disponibles:', this.rutasDisponibles);
       },
       error: (error) => {
         console.error('Error al cargar rutas:', error);
@@ -65,7 +64,6 @@ export class PackageAssigmentComponent {
     this.cargando = true;
     this.packageService.getPackagesOnHold().subscribe({
       next: (data) => {
-        console.log('Paquete:', data);
         this.paquetesUpdate = data.data;
         this.paquetes = data.data.map((paquete: any) => ({
           
@@ -134,7 +132,6 @@ export class PackageAssigmentComponent {
     const paquetesEncontrados = this.paquetesSeleccionados.filter(p => packageIds.includes(p.id));
     this.packageService.updateMultiplePackages(packageIds, journeyId, 'transito').subscribe({
       next: (response) => {
-        console.log('Paquetes actualizados:', response);
         this.update.emit()
 
       },
